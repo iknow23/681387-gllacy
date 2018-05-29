@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Aynur Vafin](https://up.htmlacademy.ru/htmlcss/21/user/681387).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Уразаев](https://htmlacademy.ru/profile/urazaev).
 
 ---
 

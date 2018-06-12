@@ -10,7 +10,7 @@
 		<h1 class="visually-hidden">Магазин мороженного «Глэйси»</h1>
 		<nav class="main-navigation">
 			<p class="main-header-logo">
-				<a><img src="img/logo.svg" width="" height="" alt="Логотип магазина Глэйси"></a>
+				<a><img src="img/logo.svg" width="155" height="70" alt="Логотип магазина Глэйси"></a>
 			</p>
 			<ul class="site-navigation">
 				<li><a href="catalog.html">Каталог</a></li>
@@ -18,7 +18,9 @@
 				<li><a href="#">О компании</a></li>
 			</ul>
 			<p class="search-navigation">
-				<input type="search">
+				<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+					<input type="search">
+				</form>
 			</p>
 			<ul class="user-navigation">
 				<li class="login-link">
@@ -28,6 +30,26 @@
 					<a class="basket" href="#">Пусто</a>
 				</li>
 			</ul>
+			<!-- modal-login start -->
+			<section class="modal modal-login">
+				<h2 class="visually-hidden">Личный кабинет</h2>
+				<form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+					<p>
+						<label class="visually-hidden" for="user-mail">Электронная почта</label>
+						<input class="login-icon-user" type="email" name="mail" id="user-mail" placeholder="Электронная почта">
+					</p>
+					<p>
+						<label class="visually-hidden" for="user-password">Пароль</label>
+						<input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
+					</p>
+					<button class="button" type="submit">Войти</button>
+					<p class="login-password-info">
+						<a class="restore" href="#">Забыли пароль?</a>
+						<a class="restore" href="#">Новая регистрация</a>
+					</p>
+				</form>
+			</section>
+			<!-- modal-login end -->
 		</nav>
 		<p class="work-time">
 			С 10 до 20, ежедневно
@@ -144,7 +166,8 @@
 			<div class="subscription-wrap">
 				<p>Подпишитесь на нашу рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно=)</p>
 				<form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
-					<input type="text" name="text" placeholder="Электронная почта">
+					<label class="visually-hidden" for="mail">Введите Ваш электронный адрес:</label>
+					<input type="email" name="mail" id="mail" placeholder="Электронная почта">
 					<button type="submit">Отправить</button>
 				</form>
 			</div>
@@ -192,33 +215,12 @@
 	
 		<div class="footer-copyright">
 			<a href="https://htmlacademy.ru/intensive/htmlcss">
-				<img src="img/logo-htmlacademy-small.png" width="" height="" alt="Логотип HTML Academy">
+				<img src="img/logo-htmlacademy-small.png" width="108" height="39" alt="Логотип HTML Academy">
 				<p>Сделано в HTML Academy &#169; 2017</p>
 			</a>
 		</div>
 	</footer>
 	<!-- footer end -->
-	
-	<!-- modal-login start -->
-	<section class="modal modal-login">
-		<h2 class="visually-hidden">Личный кабинет</h2>
-		<form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-			<p>
-				<label class="visually-hidden" for="user-mail">Электронная почта</label>
-				<input class="login-icon-user" id="user-mail" type="text" name="mail" placeholder="Электронная почта">
-			</p>
-			<p>
-				<label class="visually-hidden" for="user-password">Пароль</label>
-				<input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
-			</p>
-			<button class="button" type="submit">Войти</button>
-			<p class="login-password-info">
-				<a class="restore" href="#">Забыли пароль?</a>
-				<a class="restore" href="#">Новая регистрация</a>
-			</p>
-		</form>
-	</section>
-	<!-- modal-login end -->
 	
 	<!-- modal-feedback start -->
 	<section class="modal modal-feedback">
@@ -230,10 +232,10 @@
 			</p>
 			<p>
 				<label class="visually-hidden" for="mail">Введите Вашу электронную почту?</label>
-				<input type="text" id="mail" name="email" placeholder="Ваша почта для ответа?">
+				<input type="email" id="mail" name="mail" placeholder="Ваша почта для ответа?">
 			</p>
 			<p>
-				<textarea cols="35px" placeholder="Напишите что-нибудь..."></textarea>
+				<textarea cols="35" placeholder="Напишите что-нибудь..."></textarea>
 			</p>
 			<button class="button" type="submit">Отправить</button>
 		</form>

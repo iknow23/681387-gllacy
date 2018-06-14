@@ -610,6 +610,13 @@ fieldset {
 	border: none;
 }
 
+fieldset ul {
+	list-style: none;
+
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
+}
+
 .filter button {
 	font-size: 16px;
 	line-height: 18px;
@@ -619,9 +626,52 @@ fieldset {
 	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	border: 2px solid #ffffff;
+	
+	cursor: pointer;
 }
 
+.filter button:hover,
+.filter button:focus {
+	color: #000000;
+	
+	background-color: #ffffff;
+}
 
-
+.filter button:active {
+	background-color: #eaeaea;
+}
 /*filters end*/
 
+
+/*pagination start*/
+.pagination-list {
+	list-style: none;
+}
+
+.pagination-list a {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+.pagination-item-current a {
+	color: #000000;
+	background-color: #ffffff;
+	
+	border-radius: 50%;
+}
+
+.pagination-list a:hover,
+.pagination-list a:focus {
+	background-color: #9db1a5;
+	
+	border-radius: 50%;
+}
+
+.pagination-list a:active {
+	color: #000000;
+	
+	background-color: #ffffff;
+}
+/*pagination end*/

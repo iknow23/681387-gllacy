@@ -1,0 +1,627 @@
+body {
+	margin: 0;
+	padding: 0;
+	
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 700;
+	color: #ffffff;
+	
+	background-color: #849d8f;
+	background-image: url("../img/main-bg.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*main-header start*/
+.site-navigation {
+	font-size: 16px;
+	line-height: 18px;
+	color: #ffffff;
+	
+	list-style: none;
+}
+
+.site-navigation a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus {
+	color: #000000;
+	text-decoration: none;
+	
+	background-color: #ffffff;
+	border-radius: 20px;
+}
+
+.site-navigation a:active {
+	color: #000000;
+	text-decoration: none;
+	
+	background-color: #ffffff;
+	border-radius: 20px;
+	box-shadow: inset 0 2px 2px rgb(0, 0, 0, 0.5);
+}
+
+.modal-search {
+	width: 400px; /*временно*/
+	
+	font-size: 14px;
+	line-height: 24px;
+	color: #000000; /*временно*/
+	
+	background-color: #f8f7f4;
+	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+
+.search-form input {
+	font-size: 14px;
+	line-height: 24px;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
+.user-navigation {
+	list-style: none;
+}
+
+.user-navigation a {
+	font-size: 14px;
+	line-height: 16px;
+	color: #ffffff;
+}
+
+.user-navigation .login-link {
+	font-weight: 500;
+}
+
+.modal-login {
+	width: 400px; /*временно*/
+	
+	font-size: 14px;
+	line-height: 24px;
+	color: #000000; /*временно*/
+	
+	background-color: #f8f7f4;
+	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+
+.login-form input {
+	font-size: 14px;
+	line-height: 24px;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
+.login-form input:focus {
+	border-color: #663d15;
+}
+
+.login-form .button {
+	font-size: 18px;
+	line-height: 24px;
+	color: #ffffff;
+	
+	background-color: #eb563b;
+	border: none;
+	border-top-left-radius: 15% 50%;
+	border-bottom-left-radius: 15% 50%;
+	border-top-right-radius: 15% 50%;
+	border-bottom-right-radius: 15% 50%;
+}
+
+.login-password-info a {
+	font-size: 13px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #323232;
+	text-decoration: underline;
+}
+
+.basket {
+	font-weight: 500;
+}
+
+.work-time {
+	text-align: right;
+}
+
+.work-day {
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.work-tel {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+.slides-switches {
+	list-style: none;
+	text-align: center;
+}
+
+.slide-radio {
+	background-image: url("../img/main-page.png");
+}
+
+.promo {
+	text-align: center;
+}
+
+.promo p {
+	font-size: 60px;
+	line-height: 60.35px;
+}
+
+.button {
+	font-size: 32px;
+	line-height: 44px;
+	color: #ffffff;
+	
+	background: linear-gradient(to top, #e74b36, #f26843);
+	border-radius: 20px;
+	box-shadow: 0 2px 1px 0 #D14C37;
+}
+
+.button:hover,
+.button:focus {
+	background: #F38267;
+}
+
+.button:active {
+	background: linear-gradient(to bottom, #e74b36, #f26843);
+	box-shadow: inset 2px 1px 0 #D14C37;
+}
+
+.promo-btn {
+	color: #ffffff;
+	text-shadow: 0 0 20px #BB4C37;
+}
+/*main-header end*/
+
+/*discounts start*/
+.discount-list {
+	list-style: none;
+}
+
+.discount-list .button {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	color: #ffffff;
+	
+	background: linear-gradient(to top, #e74b36, #f26843);
+	border-radius: 20px;
+	box-shadow: 0 2px 1px 0 #D14C37;
+}
+
+.discount-list .button:hover,
+.discount-list .button:focus {
+	background: #F38267;
+}
+
+.discount-list .button:active {
+	background: linear-gradient(to bottom, #e74b36, #f26843);
+	box-shadow: inset 2px 1px 0 #D14C37;
+}
+
+.discounts-raspberry {
+	background-color: #1A1211;
+	background-image: url("../img/raspbery.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.discounts-chocolate {
+	background-color: #1A1211;
+	background-image: url("../img/chokolate.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.discounts h3 {
+	font-size: 35px;
+	line-height: 41px;
+}
+
+.discounts p {
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.discounts .button {
+	font-size: 18px;
+	line-height: 24px;
+	
+	background: linear-gradient(to top, #E54A36, #F06542);
+}
+/*discounts end*/
+
+/*catalog start*/
+.catalog-list {
+	list-style: none;
+}
+
+.catalog .button {
+	font-size: 18px;
+	line-height: 24px;
+	color: #ffffff;
+	text-decoration: none;
+	
+	background: linear-gradient(to top, #e74b36, #f26843);
+	border-radius: 20px;
+	box-shadow: 0 2px 1px 0 #D14C37;
+}
+
+.catalog .button:hover,
+.catalog .button:focus {
+	background: #F38267;
+}
+
+.catalog .button:active {
+	background: linear-gradient(to bottom, #e74b36, #f26843);
+	box-shadow: inset 2px 1px 0 #D14C37;
+}
+
+.catalog li:hover,
+.catalog li:focus {
+	background-color: rgba(255, 255, 255, 0.2);
+	
+	border-radius: 5px;
+}
+
+.catalog a.button-hidden {
+	display: none;
+}
+
+.catalog li:hover .button-hidden,
+.catalog li:focus .button-hidden {
+	display: block;
+}
+
+.catalog a:hover,
+.catalog a:focus,
+.catalog a:active {
+	color: #ffbc9e;
+}
+
+.catalog-item span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	background: url("../img/hit.png") no-repeat; /* Фоновый рисунок для замены текста */
+}
+
+.catalog-price {
+	font-size: 45px; /*размер шрифта подобрал на глаз, фотошоп почему-то не выдал font-size*/
+	line-height: 45px;
+	
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.catalog-item a {
+	color: #ffffff;
+	font-weight: 500;
+	
+	text-decoration: underline;
+}
+
+.catalog-list img {
+	border-radius: 50%;
+}
+/*catalog end*/
+
+/*about-us start*/
+.about-us {
+	color: #323232;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	
+	background-color: #EDDFC3;
+	background-image: url("../img/pattern.jpg");
+}
+
+.about-us h2 {
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 500;
+}
+
+.about-us-list {
+	list-style: none;
+}
+/*about-us end*/
+
+/*blog start*/
+.blog {
+	background-color: #ffffff;
+	background-image: url("../img/strawberry-bg-static.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.blog a:hover,
+.blog a:focus,
+.blog a:active {
+	color: #e84d37;
+}
+
+.blog h2 {
+	color: #323232;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 500;
+}
+
+.blog a {
+	color: #323232;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 700;
+	
+	text-decoration: underline;
+}
+/*blog end*/
+
+/*subscription start*/
+.subscription {
+	color: #5a5a5a;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	
+	background-image: url("../img/bg-post.svg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.subscription-wrap {
+	background-color: #f8f7f4;
+	border-radius: 5px;
+}
+
+.subscription-form input {
+	font-size: 16px;
+	line-height: 24px;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
+.subscription-form input:focus {
+	border-color: #663d15;
+}
+
+.subscription-form button {
+	font-size: 18px;
+	line-height: 24px;
+	color: #fefefe;
+	
+	background: linear-gradient(to top, #e74b36, #f26843);
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 2px 1px 0 #D14C37;
+}
+
+.subscription-form button:hover,
+.subscription-form button:focus {
+	background: #F38267;
+}
+
+.subscription-form button:active {
+	background: linear-gradient(to bottom, #e74b36, #f26843);
+	box-shadow: inset 2px 1px 0 #D14C37;
+}
+/*subscription end*/
+
+/*map start*/
+.contact {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #323232;
+
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+.contact b {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.contact .button {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+}
+/*map end*/
+
+/*footer start*/
+.main-footer a {
+	color: #ffffff;
+	
+	text-decoration: underline;
+}
+
+.main-footer a:hover,
+.main-footer a:focus,
+.main-footer a:active {
+	color: #e84d37;
+}
+
+.social-button {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+
+	list-style: none;
+}
+
+.documentation-list {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+
+	list-style: none;
+	text-align: center;
+}
+
+.documentation-list li:first-child {
+	font-weight: 700;
+}
+
+.footer-copyright {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
+	
+	text-align: right;
+}
+/*footer end*/
+
+/*modal-feedback start*/
+.modal-feedback {
+	color: #000000; /*временно*/
+	
+	background-color: #f8f7f4;
+	border-radius: 10px;
+}
+
+.modal-feedback h2 {
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 500;
+	color: #323232;
+}
+
+.modal-feedback input {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid #999999;
+	border-radius: 5px;
+}
+
+.modal-feedback textarea {
+	width: 425px;
+	height: 155px;
+}
+
+.modal-feedback .button {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	
+	border: none;
+	cursor: pointer;
+}
+/*modal-feedback end*/
+
+/*------------------inner-page style's start------------------------*/
+
+/*main-header start*/
+.site-navigation-current a {
+	font-size: 16px;
+	line-height: 18px;
+	color: #ffffff;
+	text-decoration: none;
+	
+	background: #D07058;
+	border-radius: 20px;
+}
+
+.site-navigation-current a:active {
+	color: #000000;
+	text-decoration: none;
+	
+	border-radius: 20px;
+	box-shadow: inset 0 2px 2px rgb(0, 0, 0, 0.5);
+}
+/*main-header end*/
+
+/*breadcrumbs start*/
+.breadcrumbs {
+	list-style: none;
+}
+
+.breadcrumbs li {
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.breadcrumbs a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus,
+.breadcrumbs a:active {
+	color: #ffbc9e;
+}
+/*breadcrumbs end*/
+
+/*catalog-title start*/
+.catalog-title {
+	font-size: 35px;
+	line-height: 41px;
+	font-weight: 700;
+	color: #ffffff;
+}
+/*catalog-title end*/
+
+/*filters start*/
+.filter label,
+.filter legend {
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+fieldset {
+	border: none;
+}
+
+.filter button {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	border: 2px solid #ffffff;
+}
+
+
+
+/*filters end*/
+

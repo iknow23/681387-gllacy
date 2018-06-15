@@ -50,6 +50,16 @@ a {
 	box-shadow: inset 0 2px 2px rgb(0, 0, 0, 0.5);
 }
 
+.sub-nav {
+	display: none;
+	
+	list-style: none;
+}
+
+.first-link:hover .sub-nav {
+	display: block;
+}
+
 .modal-search {
 	width: 400px; /*временно*/
 	
@@ -177,6 +187,7 @@ a {
 	background: linear-gradient(to top, #e74b36, #f26843);
 	border-radius: 20px;
 	box-shadow: 0 2px 1px 0 #D14C37;
+	text-shadow: 0 0 20px #BB4C37;
 }
 
 .button:hover,
@@ -190,8 +201,7 @@ a {
 }
 
 .promo-btn {
-	color: #ffffff;
-	text-shadow: 0 0 20px #BB4C37;
+	
 }
 /*main-header end*/
 
@@ -290,14 +300,14 @@ a {
 	display: none;
 }
 
-.catalog li:hover .button-hidden,
-.catalog li:focus .button-hidden {
+.catalog-item:hover .button-hidden,
+.catalog-item:focus .button-hidden {
 	display: block;
 }
 
-.catalog a:hover,
-.catalog a:focus,
-.catalog a:active {
+.catalog-description a:hover,
+.catalog-description a:focus,
+.catalog-description a:active {
 	color: #ffbc9e;
 }
 
@@ -306,6 +316,9 @@ a {
 	left: 0;
 	width: 100%;
 	height: 65px;
+	
+	font-size: 0;
+	
 	background: url("../img/hit.png") no-repeat; /* Фоновый рисунок для замены текста */
 }
 
@@ -606,11 +619,11 @@ a {
 	color: #ffffff;
 }
 
-fieldset {
+.filter-group {
 	border: none;
 }
 
-fieldset ul {
+.filter-group ul {
 	list-style: none;
 
 	background-color: rgba(255, 255, 255, 0.3);

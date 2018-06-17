@@ -11,33 +11,37 @@
 	<!-- header start -->
 	<header class="main-header">
 		<nav class="main-navigation">
-			<p class="main-header-logo">
-				<a href="index.html"><img src="img/logo.svg" width="155" height="70" alt="Логотип магазина Глэйси"></a>
-			</p>
-			<ul class="site-navigation">
-				<li class="site-navigation-current"><a href="#">Каталог</a></li>
-				<li><a href="#">Доставка и оплата</a></li>
-				<li><a href="#">О компании</a></li>
-			</ul>
-			<div class="modal-search">
-				<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-					<h2 class="visually-hidden">Поиск по сайту</h2>
-					<p class="search-navigation">
-						<label class="visually-hidden" for="main-search">Поиск</label>
-						<input class="site-search" type="text" name="search" id="main-search" placeholder="Что ищем?">
-					</p>
-				</form>
+			<div class="main-navigation-left">
+				<p class="main-header-logo">
+					<a href="index.html"><img src="img/logo.svg" width="155" height="70" alt="Логотип магазина Глэйси"></a>
+				</p>
+				<ul class="site-navigation">
+					<li class="site-navigation-current"><a href="#">Каталог</a></li>
+					<li><a href="#">Доставка и оплата</a></li>
+					<li><a href="#">О компании</a></li>
+				</ul>
 			</div>
-			<ul class="user-navigation">
-				<li class="login-link">
-					<a class="login-link" href="#">Вход</a>
-				</li>
-				<li class="basket">
-					<a class="basket" href="#">2 товара</a>
-					<!-- modal-basket start -->
-					<!-- modal-basket end -->
-				</li>
-			</ul>
+			<div class="main-navigation-right">
+				<div class="modal-search">
+					<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+						<h2 class="visually-hidden">Поиск по сайту</h2>
+						<p class="search-navigation">
+							<label class="visually-hidden" for="main-search">Поиск</label>
+							<input class="site-search" type="text" name="search" id="main-search" placeholder="Что ищем?">
+						</p>
+					</form>
+				</div>
+				<ul class="user-navigation">
+					<li class="login-link">
+						<a class="login-link" href="#">Вход</a>
+					</li>
+					<li class="basket">
+						<a class="basket" href="#">2 товара</a>
+						<!-- modal-basket start -->
+						<!-- modal-basket end -->
+					</li>
+				</ul>
+			</div>
 		</nav>
 		<p class="work-time">
 			<span class="work-day">С 10 до 20, ежедневно</span>
@@ -124,10 +128,10 @@
 		<!-- filters end -->
 	
 		<!-- catalog start -->
-		<section class="catalog">
+		<section class="catalog-inner">
 			<h2 class="visually-hidden">Каталог мороженного</h2>
-			<ul class="catalog-list">
-				<li class="catalog-item">
+			<ul class="catalog-list-inner">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item1-1.jpg" width="267" height="267" alt="Сливочное мороженое с апельсиновым джемом">
 					</p>
@@ -137,7 +141,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item1-2.jpg" width="267" height="267" alt="Сливочно-кофейное">
 					</p>
@@ -147,7 +151,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item1-3.jpg" width="267" height="267" alt="Сливочно-клубничное">
 					</p>
@@ -157,7 +161,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item1-4.jpg" width="267" height="267" alt="Сливочное крем-брюле">
 					</p>
@@ -167,7 +171,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item2-1.jpg" width="267" height="267" alt="Сливочное с брусничным джемом">
 					</p>
@@ -177,7 +181,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item2-2.jpg" width="267" height="267" alt="Сливочно-черничное">
 					</p>
@@ -187,7 +191,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item2-3.jpg" width="267" height="267" alt="Сливочно-лимонное">
 					</p>
@@ -197,7 +201,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item2-4.jpg" width="267" height="267" alt="Сливочное с шоколадной стружкой">
 					</p>
@@ -207,7 +211,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item3-1.jpg" width="267" height="267" alt="Сливочно-ванильное с кусочками шоколада">
 					</p>
@@ -217,7 +221,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item3-2.jpg" width="267" height="267" alt="Сливочное с ментоловым сиропом">
 					</p>
@@ -227,7 +231,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item3-3.jpg" width="267" height="267" alt="Сливочное с кусочками черного шоколада">
 					</p>
@@ -237,7 +241,7 @@
 					<p>
 					<a class="button button-hidden" href="#">Быстрый просмотр</a>
 				</li>
-				<li class="catalog-item">
+				<li class="catalog-item-inner">
 					<p class="catalog-image">
 						<img src="img/catalog-item3-4.jpg" width="267" height="267" alt="Сливочное с мятным сиропом">
 					</p>

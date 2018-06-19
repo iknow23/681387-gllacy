@@ -55,36 +55,45 @@ a {
 /*main-header start*/
 .main-navigation {
 	display: flex;
+	margin-top: 10px;
+	
+	outline: 1px solid red;
 }
 
 .main-header-logo {
+	margin: 0;
+	
 	width: 155px;
 	height: 70px;
+	
+	outline: 1px solid yellow;
 }
 
 .main-navigation-left {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0px;
-	margin-top: 10px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	
 	width: 560px;
 	min-height: 70px;
+	
+	outline: 1px solid yellow;
 }
 
 .main-navigation-right {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin: 0px;
-	margin-top: 10px;
+	margin: 0;
 	margin-left: auto;
 	padding: 0px;
 	
 	width: 265px;
 	min-height: 70px;
+	
+	outline: 1px solid yellow;
 }
 
 .site-navigation {
@@ -99,6 +108,8 @@ a {
 	color: #ffffff;
 	
 	list-style: none;
+	
+	outline: 1px solid black;
 }
 
 .site-navigation li {
@@ -139,32 +150,10 @@ a {
 	display: block;
 }
 
-.modal-search {
-	display: none;
-	
-	width: 400px; /*временно*/
-	
-	font-size: 14px;
-	line-height: 24px;
-	color: #000000; /*временно*/
-	
-	background-color: #f8f7f4;
-	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
-	border-radius: 5px;
-}
-
-.search-form input {
-	font-size: 14px;
-	line-height: 24px;
-	color: #999999;
-	
-	background-color: #ffffff;
-	border: 1px solid rgba(0, 0, 0, 0.4);
-	border-radius: 5px;
-}
-
 .user-navigation {
 	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	
 	list-style: none;
 }
@@ -180,12 +169,135 @@ a {
 	color: #ffffff;
 }
 
+.modal-search {
+	position: relative;
+	
+	width: 32px;
+	height: 32px;
+	
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.2);
+	
+	outline: 1px solid pink;
+}
+
+.modal-search::before {
+	content: "";
+	
+	position: absolute;
+	top: 7px;
+	left: 8px;
+	
+	width: 17px;
+	height: 17px;
+	
+	background-image: url("../img/loupe.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.modal-search:hover {
+	cursor: pointer;
+	background-color: #ffffff;
+}
+
+.modal-search:hover .search-form {
+	display: block;
+	
+	position: absolute;
+	top: 35px;
+	left: -305px;
+}
+	
+.search-form {
+	display: none;
+	
+	width: 340px;
+	min-height: 85px;
+	
+	font-size: 14px;
+	line-height: 24px;
+	color: #999999;
+	
+	background-color: #f8f7f4;
+	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	
+	box-sizing: border-box;
+}
+
+.search-navigation {
+	margin: 20px 15px;
+}
+
+.search-navigation input {
+	min-width: 310px;
+	height: 45px;
+	margin: 0;
+	padding: 10px 12px;
+
+	font-size: 14px;
+	line-height: 24px;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
 .user-navigation .login-link {
+	padding: 0;
+	
+	text-align: center;
+}
+
+.user-navigation a.login-link {
+	position: relative;
+	
+	display: block;
+	
+	width: 92px;
+	height: 32px;
+	padding: 8px 0px 0px 35px;
+	
 	font-weight: 500;
+	
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15px;
+}
+
+.user-navigation a.login-link::before {
+	content: "";
+	
+	position: absolute;
+	top: 6px;
+	left: 18px;
+	
+	width: 21px;
+	height: 19px;
+	
+	background-image: url("../img/entrance.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.user-navigation a.login-link:hover {
+	cursor: pointer;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+a.login-link:hover .modal-login {
+	display: block;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .modal-login {
 	display: none;
+	
 	width: 400px; /*временно*/
 	
 	font-size: 14px;
@@ -232,14 +344,53 @@ a {
 	text-decoration: underline;
 }
 
-.basket {
+li.basket {
 	font-weight: 500;
 }
 
+a.basket {
+	position: relative;
+	
+	display: block;
+	min-width: 100px;
+	height: 32px;
+	
+	padding: 8px 0px 8px 46px;
+	
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15px;
+}
+
+a.basket::before {
+	content: "";
+	
+	position: absolute;
+	top: 6px;
+	left: 15px;
+	
+	width: 21px;
+	height: 20px;
+	
+	background-image: url("../img/basket.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+a.basket:hover {
+	cursor: pointer;
+	color: #000000;
+	background-color: #ffffff;
+}
+
 .work-time {
-	margin: 0px;
+	display: flex;
+	flex-direction: column;
+
+	margin: 0;
 	
 	text-align: right;
+	
+	outline: 1px solid red;
 }
 
 .work-day {

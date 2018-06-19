@@ -1,8 +1,6 @@
 body {
 	min-width: 1200px;
-	margin: 0 auto;
-	padding: 0px 25px;
-	
+		
 	font-family: "Roboto", Arial, sans-serif;
 	font-size: 16px;
 	line-height: 22px;
@@ -44,6 +42,7 @@ a {
 	padding-right: 27px;
 }
 
+.main-header,
 .discounts,
 .catalog,
 .about-us,
@@ -311,6 +310,8 @@ a {
 	display: flex;
 	justify-content: space-between;
 	
+	padding: 0;
+	
 	list-style: none;
 }
 
@@ -382,6 +383,8 @@ a {
 
 .catalog-list,
 .catalog-list-inner {
+	padding: 0;
+	
 	list-style: none;
 }
 
@@ -513,7 +516,8 @@ a {
 .about-us {
 	margin: 0;
 	margin-bottom: 40px;
-	padding: 25px 27px 50px 27px;
+	margin-left: 27px;
+	margin-right: 27px;
 	
 	color: #323232;
 	font-size: 16px;
@@ -702,6 +706,8 @@ a {
 }
 
 .social-button {
+	padding: 0;
+	
 	font-size: 13px;
 	line-height: 18px;
 	font-weight: 400;
@@ -803,8 +809,10 @@ a {
 
 /*breadcrumbs start*/
 .breadcrumbs {
-	list-style: none;
 	margin-bottom: 5px;
+	padding: 0;
+	
+	list-style: none;
 }
 
 .breadcrumbs li {

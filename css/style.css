@@ -479,7 +479,7 @@ a {
 	margin-right: 25px;
 }
 
-.catalog-item-inner:nth-child(3n+3) {
+.catalog-item-inner:nth-child(4n+4) {
 	margin-right: 0px;
 }
 

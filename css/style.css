@@ -53,7 +53,8 @@ a {
 /*main-header start*/
 .main-navigation {
 	display: flex;
-	padding-top: 10px;
+	
+	padding-top: 7px;
 }
 
 .main-header-logo {
@@ -66,7 +67,7 @@ a {
 .main-navigation-left {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+
 	margin: 0;
 	padding: 0;
 	
@@ -88,11 +89,14 @@ a {
 
 .site-navigation {
 	display: flex;
-	position: relative;
-	margin: 0px;
-	margin-left: 25px;
-	padding: 0px;
 	
+	position: relative;
+	
+	width: 382px;
+	margin: 0px;
+	margin-bottom: 6px;
+	margin-left: 12px;
+	padding: 0px;
 	font-size: 16px;
 	line-height: 18px;
 	color: #ffffff;
@@ -101,16 +105,14 @@ a {
 }
 
 .site-navigation li {
-	padding-right: 25px;
+	margin-right: 9px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .site-navigation a {
 	padding: 8px 10px;
 	
 	color: #ffffff;
-	text-decoration: underline;
-	
-	outline: 1px solid red;
 }
 
 .site-navigation a:hover,
@@ -120,6 +122,7 @@ a {
 	
 	background-color: #ffffff;
 	border-radius: 20px;
+	border-bottom: none;
 }
 
 .site-navigation a:active {
@@ -131,15 +134,28 @@ a {
 	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.first-link {
+	position: relative;
+}
+
+.first-link:hover .sub-nav {
+	display: block;
+}
+
 .sub-nav {
 	display: none;
 	position: absolute;
-	top: 40px;
-	left: 0;
+	top: 30px;
+	left: -5px;
 	
-	width: 100px;
-	min-height: 500px;
+	width: 144px;
+	min-height: 172px;
+	margin: 0;
+	padding: 0;
 	
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
 	color: #000000;
 	list-style: none;
 	background: #ffffff;
@@ -148,24 +164,66 @@ a {
 }
 
 .sub-nav li {
-	margin-bottom: 10px;
+	margin: 0px 5px;
+	padding: 11px 15px;
+	box-sizing: border-box;
 }
 
-.first-link:hover .sub-nav {
-	display: block;
+.sub-nav li:not(:first-child) {
+	font-weight: 400;
+}
+
+.sub-nav li:first-child {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sub-nav a {
+	padding: 0;
+	
+	color: #000000;
+}
+
+.sub-nav li:hover,
+.sub-nav li:focus,
+.sub-nav a:hover,
+.sub-nav a:focus {
+	margin: 0;
+	
+	background: #fbded7;
+}
+
+.sub-nav li:active,
+.sub-nav a:active {
+	margin: 0;
+	
+	background: #f6b5a5;
+	box-shadow: none;
+}
+
+.sub-nav a:visited {
+	margin: 0;
+	
+	background: #d07058;
 }
 
 .user-navigation {
+	width: 324px;
+	
 	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+	justify-content: space-between;
 	
 	list-style: none;
+	margin-bottom: 20px;
 }
 
 .user-navigation li {
-	padding: 10px;
-	margin-left: 20px;
+	margin: 0;
+	padding: 0;
+	margin-left: 13px;
+}
+
+.user-navigation li.login-link {
+	margin-left: 7px;
 }
 
 .user-navigation a {
@@ -184,19 +242,14 @@ a {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.modal-search::before {
-	content: "";
-	
+.modal-search .loup {
 	position: absolute;
-	top: 7px;
+	top: 8px;
 	left: 8px;
-	
-	width: 17px;
-	height: 17px;
-	
-	background-image: url("../img/loupe.svg");
-	background-repeat: no-repeat;
-	background-position: 0 0;
+}
+
+.modal-search:hover .loup {
+	fill: #000000;
 }
 
 .modal-search:hover {
@@ -274,7 +327,7 @@ a {
 	
 	position: absolute;
 	top: 6px;
-	left: 18px;
+	left: 20px;
 	
 	width: 21px;
 	height: 19px;
@@ -358,7 +411,7 @@ a.basket {
 	min-width: 100px;
 	height: 32px;
 	
-	padding: 8px 0px 8px 46px;
+	padding: 8px 0px 8px 45px;
 	
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 15px;
@@ -369,7 +422,7 @@ a.basket::before {
 	
 	position: absolute;
 	top: 6px;
-	left: 15px;
+	left: 16px;
 	
 	width: 21px;
 	height: 20px;
@@ -388,9 +441,12 @@ a.basket:hover {
 .work-time {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
 	margin: 0;
+	margin-top: -3px;
 	
+	min-height: 43px;
 	text-align: right;
 }
 
@@ -400,6 +456,8 @@ a.basket:hover {
 }
 
 .work-tel {
+	margin-right: -2px;
+	
 	font-size: 22px;
 	line-height: 24px;
 }
@@ -453,7 +511,7 @@ li.slide {
 	width: 100%;
 	min-height: 230px;
 	
-	margin-bottom: 40px;
+	margin-bottom: 21px;
 }
 
 .discount-list {
@@ -504,31 +562,63 @@ li.slide {
 	background-repeat: no-repeat;
 }
 
-.discounts h3 {
-	margin: 18px;
+.discounts-raspberry h3 {
+	margin-left: 18px;
+	margin-top: 14px;
+	margin-bottom: 17px;
 	padding: 0;
 	
 	font-size: 35px;
 	line-height: 41px;
 }
 
-.discounts p {
-	margin: 16px 18px 42px 18px;
+.discounts-raspberry p {
+	margin: 16px 20px 53px 20px;
 	padding: 0;
 	
-	font-size: 16px;   /*---------изменил на 16px, в макете 18px-----------*/
+	font-size: 18px;
 	line-height: 22px;
 }
 
-.discounts .button {
-	margin-left: 372px;
-	padding: 11px 20px;
+.discounts-raspberry .button {
+	margin-left: 375px;
+	padding: 10px 22px;
 	
 	font-size: 18px;
 	line-height: 24px;
 	
 	background: linear-gradient(to top, #E54A36, #F06542);
 }
+
+.discounts-chocolate h3 {
+	margin-left: 20px;
+	margin-top: 14px;
+	margin-bottom: 16px;
+	padding: 0;
+	
+	font-size: 35px;
+	line-height: 41px;
+}
+
+
+.discounts-chocolate p {
+	margin: 16px 20px 53px 20px;
+	padding: 0;
+	
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.discounts-chocolate .button {
+	margin-left: 372px;
+	padding: 10px 22px;
+	
+	font-size: 18px;
+	line-height: 24px;
+	
+	background: linear-gradient(to top, #E54A36, #F06542);
+}
+
 
 .discounts-chocolate .button:last-child {
 	margin-left: 350px;
@@ -538,7 +628,7 @@ li.slide {
 /*catalog start*/
 .catalog {
 	min-height: 362px;
-	margin-bottom: 55px;
+	margin-bottom: 17px;
 }
 
 .catalog-list {
@@ -553,6 +643,7 @@ li.slide {
 .catalog-list-inner {
 	margin: 0;
 	padding: 0;
+	padding-left: -1px;
 	
 	list-style: none;
 }
@@ -576,8 +667,8 @@ li.slide {
 	position: relative;
 	
 	width: 267px;
-	height: 330px;
-	margin-right: 25px;
+	height: 406px;
+	margin-right: 26px;
 	padding-top: 0;
 }
 
@@ -592,8 +683,8 @@ li.slide {
 
 .catalog-item span.hit {
 	position: absolute;
-	top: 16px;
-	left: 0;
+	top: 17px;
+	left: 1px;
 	width: 100%;
 	height: 65px;
 	
@@ -642,10 +733,17 @@ span.price-symbol::before {
 }
 
 .catalog-description {
-	margin: 0;
+	margin: -8px;
+	margin-left: -6px;
 	padding: 0;
+	padding-left: 14px;
+	
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 500;
 	
 	text-align: center;
+	width: 266px;
 }
 
 .catalog-description a:hover,
@@ -719,6 +817,7 @@ span.price-symbol::before {
 /*about-us start*/
 .about-us {
 	margin: 0;
+	margin-top: -44px;
 	margin-bottom: 40px;
 	margin-left: 27px;
 	margin-right: 27px;
@@ -735,11 +834,9 @@ span.price-symbol::before {
 }
 
 .about-us h2 {
-	width: 100%;
-	
 	margin: 0;
 	margin-bottom: 24px;
-	padding-top: 28px;
+	padding-top: 26px;
 	padding-left: 20px;
 	
 	font-size: 24px;
@@ -753,8 +850,13 @@ span.price-symbol::before {
 	display: flex;
 	flex-wrap: wrap;
 	
+	
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
 	margin: 0;
-	margin-left: 74px;
+	margin-top: -5px;
+	margin-left: 77px;
 	padding: 0;
 	
 	list-style: none;
@@ -764,13 +866,14 @@ span.price-symbol::before {
 	width: 486px;
 	margin: 0;
 	margin-right: 26px;
-	margin-bottom: 26px;
+	margin-bottom: 24px;
 	
 	padding: 0;
 }
 
 .about-us-item:nth-child(even) {
 	width: 525px;
+	margin-left: 8px;
 	margin-right: 0;
 	padding-left: 46px;
 }
@@ -779,8 +882,8 @@ span.price-symbol::before {
 	content: "";
 	
 	position: absolute;
-	left: -55px;
-	top: -10px;
+	left: -56px;
+	top: -12px;
 	
 	width: 49px;
 	height: 49px;
@@ -793,8 +896,8 @@ span.price-symbol::before {
 	content: "";
 	
 	position: absolute;
-	left: 500px;
-	top: -10px;
+	left: 508px;
+	top: -12px;
 	
 	width: 49px;
 	height: 49px;
@@ -807,8 +910,8 @@ span.price-symbol::before {
 	content: "";
 	
 	position: absolute;
-	left: -55px;
-	top: 78px;
+	left: -56px;
+	top: 76px;
 	
 	width: 49px;
 	height: 49px;
@@ -821,8 +924,8 @@ span.price-symbol::before {
 	content: "";
 	
 	position: absolute;
-	left: 500px;
-	top: 78px;
+	left: 508px;
+	top: 76px;
 	
 	width: 49px;
 	height: 49px;
@@ -839,7 +942,7 @@ span.price-symbol::before {
 	display: flex;
 	justify-content: space-between;
 	
-	margin-bottom: 40px;
+	margin-bottom: 35px;
 }
 
 .blog {
@@ -856,7 +959,7 @@ span.price-symbol::before {
 }
 
 .blog h2 {
-	margin-top: 26px;
+	margin-top: 24px;
 	margin-left: 20px;
 	margin-bottom: 8px;
 	
@@ -870,6 +973,7 @@ span.price-symbol::before {
 	display: block;
 	width: 300px;
 	margin: 0;
+	margin-top: -4px;
 	margin-left: 20px;
 }
 
@@ -922,7 +1026,7 @@ span.price-symbol::before {
 	margin: 0;
 	margin-bottom: 38px;
 	padding-top: 30px;
-	padding-left: 20px;
+	padding-left: 22px;
 	padding-right: 20px;
 	
 	font-size: 16px;
@@ -940,7 +1044,7 @@ span.price-symbol::before {
 
 .subscription-form input {
 	flex-grow: 1;
-	padding-left: 12px;
+	padding-left: 15px;
 	
 	font-size: 16px;
 	line-height: 24px;
@@ -959,6 +1063,7 @@ span.price-symbol::before {
 	width: 130px;
 	height: 45px;
 	margin-left: 10px;
+	margin-top: -4px;
 	
 	font-size: 18px;
 	line-height: 24px;
@@ -1010,6 +1115,7 @@ span.price-symbol::before {
 }
 
 .contact p {
+	width: 150px;
 	margin: 0;
 }
 
@@ -1023,6 +1129,9 @@ span.price-symbol::before {
 }
 
 .contact b {
+	display: block;
+	width: 235px;
+	
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
@@ -1439,8 +1548,8 @@ h1.catalog-title {
 .slider {
   position: relative;
   
-  margin-bottom: 38px;
-  padding-top: 321px;
+  margin-bottom: 43px;
+  padding-top: 277px;
   
   text-align: center;
   color: #ffffff;
@@ -1469,11 +1578,11 @@ h1.catalog-title {
 
 .button-r {
   display: inline-block;
-  padding: 12px 44px;
+  padding: 11px 40px;
 
   font-weight: 600;
-  font-size: 31px;
-  line-height: 41px;
+  font-size: 32px;
+  line-height: 44px;
   text-align: center;
   color: #ffffff;
   vertical-align: top;
@@ -1501,8 +1610,8 @@ h1.catalog-title {
 
 .slider-controls {
   position: absolute;
-  bottom: 63px;
-  left: 0;
+  bottom: 20px;
+  left: 2px;
   z-index: 20;
   
   font-size: 0;
@@ -1510,8 +1619,8 @@ h1.catalog-title {
 
 .slider-controls label {
   display: inline-block;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   margin-right: 8px;
 
   vertical-align: top;

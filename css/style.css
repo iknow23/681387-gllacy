@@ -91,6 +91,7 @@ a {
 	display: flex;
 	
 	position: relative;
+	z-index: 2;
 	
 	width: 382px;
 	margin: 0px;
@@ -106,7 +107,6 @@ a {
 
 .site-navigation li {
 	margin-right: 9px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .site-navigation a {
@@ -115,8 +115,8 @@ a {
 	color: #ffffff;
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus {
+.site-navigation a.main-nav-link:hover,
+.site-navigation a.main-nav-link:focus {
 	color: #000000;
 	text-decoration: none;
 	
@@ -134,19 +134,38 @@ a {
 	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.with-underline-class {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .first-link {
 	position: relative;
+	
+	z-index: 2;
 }
 
 .first-link:hover .sub-nav {
 	display: block;
 }
 
+.first-link::after {
+	content: "";
+	
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: -1;
+	
+	width: 100px;
+	height: 40px;
+} /*вставил неведимую перемычку-блок, чтоб подменю не скрывалось*/
+
 .sub-nav {
 	display: none;
 	position: absolute;
 	top: 30px;
 	left: -5px;
+	z-index: 2;
 	
 	width: 144px;
 	min-height: 172px;
@@ -164,8 +183,8 @@ a {
 }
 
 .sub-nav li {
-	margin: 0px 5px;
-	padding: 11px 15px;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -178,13 +197,20 @@ a {
 }
 
 .sub-nav a {
-	padding: 0;
+	display: block;
+	
+	margin: 0px 5px;
+	padding: 11px 15px;
 	
 	color: #000000;
 }
 
-.sub-nav li:hover,
-.sub-nav li:focus,
+.sub-nav a:visited {
+	margin: 0;
+	
+	background: #d07058;
+}
+
 .sub-nav a:hover,
 .sub-nav a:focus {
 	margin: 0;
@@ -192,18 +218,11 @@ a {
 	background: #fbded7;
 }
 
-.sub-nav li:active,
 .sub-nav a:active {
 	margin: 0;
 	
 	background: #f6b5a5;
 	box-shadow: none;
-}
-
-.sub-nav a:visited {
-	margin: 0;
-	
-	background: #d07058;
 }
 
 .user-navigation {
@@ -246,6 +265,8 @@ a {
 	position: absolute;
 	top: 8px;
 	left: 8px;
+	
+	fill: #ffffff;
 }
 
 .modal-search:hover .loup {
@@ -302,9 +323,23 @@ a {
 }
 
 .user-navigation .login-link {
+	position: relative;
+	
 	padding: 0;
 	
 	text-align: center;
+}
+
+.login-link .enter {
+	position: absolute;
+	top: 6px;
+	left: 20px;
+	
+	fill: #ffffff;
+}
+
+.login-link:hover .enter {
+	fill: #000000;
 }
 
 .user-navigation a.login-link {
@@ -331,10 +366,6 @@ a {
 	
 	width: 21px;
 	height: 19px;
-	
-	background-image: url("../img/entrance.svg");
-	background-repeat: no-repeat;
-	background-position: 0 0;
 }
 
 .user-navigation a.login-link:hover {
@@ -343,56 +374,121 @@ a {
 	background-color: #ffffff;
 }
 
-a.login-link:hover .modal-login {
+li.login-link:hover .modal-login {
 	display: block;
 	
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 40px;
+	left: -185px;
 }
+
+.login-link {
+	position: relative;
+	
+	z-index: 2;
+}
+
+.login-link::after {
+	content: "";
+	
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 1;
+	
+	width: 100px;
+	height: 40px;
+} /*вставил неведимую перемычку-блок, чтоб попап не скрывался*/
 
 .modal-login {
 	display: none;
 	
-	width: 400px; /*временно*/
+	width: 278px;
+	min-height: 214px;
 	
 	font-size: 14px;
 	line-height: 24px;
-	color: #000000; /*временно*/
+	color: #999999;
 	
 	background-color: #f8f7f4;
 	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
 }
 
+.login-form .form-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.form-wrapper .button,
+.form-wrapper .login-password-info {
+	width: 50%;
+}
+
+.form-wrapper {
+	margin: 20px;
+	padding: 0;
+}
+
+.login-form p {
+	margin: 0;
+	padding: 0;
+}
+
 .login-form input {
+	padding: 10px 13px 10px 13px;
+	width: 240px;
+	
 	font-size: 14px;
 	line-height: 24px;
-	color: #999999;
 	
 	background-color: #ffffff;
-	border: 1px solid rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 }
 
+.login-icon-user {
+	margin: 20px;
+}
+
+.login-icon-password {
+	margin: 0 20px 0 20px;
+}
+
+.login-form input:active {
+	border: 2px solid red;
+}
+
+.login-form input:hover,
 .login-form input:focus {
-	border-color: #663d15;
+	outline: none;
+	border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .login-form .button {
+	width: 100px;
+	height: 45px;
+	
 	font-size: 18px;
 	line-height: 24px;
 	color: #ffffff;
 	
 	background-color: #eb563b;
 	border: none;
-	border-top-left-radius: 15% 50%;
-	border-bottom-left-radius: 15% 50%;
-	border-top-right-radius: 15% 50%;
-	border-bottom-right-radius: 15% 50%;
+	border-top-left-radius: 25% 50%;
+	border-bottom-left-radius: 25% 50%;
+	border-top-right-radius: 25% 50%;
+	border-bottom-right-radius: 25% 50%;
+}
+
+.login-form .button:hover {
+	cursor: pointer;
 }
 
 .login-password-info a {
+	width: 125px;
+	
 	font-size: 13px;
 	line-height: 24px;
 	font-weight: 400;
@@ -400,7 +496,14 @@ a.login-link:hover .modal-login {
 	text-decoration: underline;
 }
 
+a.restore {
+	display: inline-block;
+	text-align: left;
+}
+
 li.basket {
+	position: relative;
+	
 	font-weight: 500;
 }
 
@@ -417,9 +520,7 @@ a.basket {
 	border-radius: 15px;
 }
 
-a.basket::before {
-	content: "";
-	
+.basket svg {
 	position: absolute;
 	top: 6px;
 	left: 16px;
@@ -427,9 +528,11 @@ a.basket::before {
 	width: 21px;
 	height: 20px;
 	
-	background-image: url("../img/basket.svg");
-	background-repeat: no-repeat;
-	background-position: 0 0;
+	fill: #ffffff;
+}
+
+.basket:hover svg {
+	fill: #000000;
 }
 
 a.basket:hover {

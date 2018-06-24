@@ -158,7 +158,7 @@ a {
 	
 	width: 100px;
 	height: 40px;
-} /*вставил неведимую перемычку-блок, чтоб подменю не скрывалось*/
+} /*вставил невидимую перемычку-блок, чтоб подменю не скрывалось*/
 
 .sub-nav {
 	display: none;
@@ -253,6 +253,7 @@ a {
 
 .modal-search {
 	position: relative;
+	z-index: 2;
 	
 	width: 32px;
 	height: 32px;
@@ -261,10 +262,22 @@ a {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
+.modal-search::after {
+	content: "";
+	
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 1;
+	
+	width: 45px;
+	height: 40px;
+} /*вставил невидимую перемычку-блок, чтоб попап не скрывался*/
+
 .modal-search .loup {
 	position: absolute;
-	top: 8px;
-	left: 8px;
+	top: 7px;
+	left: 7px;
 	
 	fill: #ffffff;
 }
@@ -301,6 +314,14 @@ a {
 	border-radius: 5px;
 	
 	box-sizing: border-box;
+}
+
+.search-form input:hover {
+	border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.search-form input:focus {
+	border: none;
 }
 
 .search-navigation {
@@ -398,7 +419,7 @@ li.login-link:hover .modal-login {
 	
 	width: 100px;
 	height: 40px;
-} /*вставил неведимую перемычку-блок, чтоб попап не скрывался*/
+} /*вставил невидимую перемычку-блок, чтоб попап не скрывался*/
 
 .modal-login {
 	display: none;
@@ -443,9 +464,22 @@ li.login-link:hover .modal-login {
 	font-size: 14px;
 	line-height: 24px;
 	
+	colo: #323232;
 	background-color: #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+	font-weight: 700;
+}
+
+.login-form input::-webkit-input-placeholder {
+	font-weight: 400;
+}
+.login-form input:-moz-placeholder {
+	font-weight: 400;
 }
 
 .login-icon-user {
@@ -456,14 +490,12 @@ li.login-link:hover .modal-login {
 	margin: 0 20px 0 20px;
 }
 
-.login-form input:active {
-	border: 2px solid red;
+.login-form input:hover {
+	border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-.login-form input:hover,
 .login-form input:focus {
-	outline: none;
-	border: 2px solid rgba(0, 0, 0, 0.3);
+	border: none;
 }
 
 .login-form .button {
@@ -504,6 +536,8 @@ a.restore {
 li.basket {
 	position: relative;
 	
+	z-index: 2;
+	
 	font-weight: 500;
 }
 
@@ -541,6 +575,23 @@ a.basket:hover {
 	background-color: #ffffff;
 }
 
+.basket-order {
+	display: none;
+	
+	width: 540px;
+	padding: 10px;
+
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+	color: #323232;
+	
+	background-color: #f8f7f4;
+	border-radius: 5px;
+}
+
+
+
 .work-time {
 	display: flex;
 	flex-direction: column;
@@ -564,6 +615,20 @@ a.basket:hover {
 	font-size: 22px;
 	line-height: 24px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .promo-slides {
 	margin: 0;
@@ -614,7 +679,7 @@ li.slide {
 	width: 100%;
 	min-height: 230px;
 	
-	margin-bottom: 21px;
+	margin-bottom: 34px;
 }
 
 .discount-list {
@@ -667,8 +732,8 @@ li.slide {
 
 .discounts-raspberry h3 {
 	margin-left: 18px;
-	margin-top: 14px;
-	margin-bottom: 17px;
+	margin-top: 16px;
+	margin-bottom: 16px;
 	padding: 0;
 	
 	font-size: 35px;
@@ -685,17 +750,18 @@ li.slide {
 
 .discounts-raspberry .button {
 	margin-left: 375px;
-	padding: 10px 22px;
+	padding: 11px 22px;
 	
 	font-size: 18px;
 	line-height: 24px;
 	
+	border-radius: 25px;
 	background: linear-gradient(to top, #E54A36, #F06542);
 }
 
 .discounts-chocolate h3 {
 	margin-left: 20px;
-	margin-top: 14px;
+	margin-top: 16px;
 	margin-bottom: 16px;
 	padding: 0;
 	
@@ -703,9 +769,8 @@ li.slide {
 	line-height: 41px;
 }
 
-
 .discounts-chocolate p {
-	margin: 16px 20px 53px 20px;
+	margin: -2px 20px 54px 20px;
 	padding: 0;
 	
 	font-size: 18px;
@@ -714,14 +779,14 @@ li.slide {
 
 .discounts-chocolate .button {
 	margin-left: 372px;
-	padding: 10px 22px;
+	padding: 10px 21px 11px 22px;
 	
 	font-size: 18px;
 	line-height: 24px;
 	
+	border-radius: 25px;
 	background: linear-gradient(to top, #E54A36, #F06542);
 }
-
 
 .discounts-chocolate .button:last-child {
 	margin-left: 350px;
@@ -731,7 +796,7 @@ li.slide {
 /*catalog start*/
 .catalog {
 	min-height: 362px;
-	margin-bottom: 17px;
+	margin-bottom: 5px;
 }
 
 .catalog-list {
@@ -769,10 +834,21 @@ li.slide {
 .catalog-item-inner {
 	position: relative;
 	
-	width: 267px;
-	height: 406px;
-	margin-right: 26px;
-	padding-top: 0;
+	width: 292px;
+	min-height: 406px;
+	padding: 5px 15px 20px 12px;
+}
+
+.catalog-item:first-child {
+	padding-left: 0;
+}
+
+.catalog-item:last-child {
+	padding-right: 0;
+}
+
+.catalog-item:nth-child(2) {
+	padding-left: 10px;
 }
 
 .catalog-item-inner:nth-child(4n+4) {
@@ -786,8 +862,8 @@ li.slide {
 
 .catalog-item span.hit {
 	position: absolute;
-	top: 17px;
-	left: 1px;
+	top: 5px;
+	left: 12px;
 	width: 100%;
 	height: 65px;
 	
@@ -796,14 +872,23 @@ li.slide {
 	background: url("../img/hit.png") no-repeat; /* Фоновый рисунок для замены текста */
 }
 
+.catalog-item span.first-hit {
+	top: 5px;
+	left: 0;
+}
+
 .catalog-list img,
 .catalog-list-inner img {
 	border-radius: 50%;
 }
 
+p.catalog-image {
+	margin-top: 0;
+}
+
 .catalog-price {
 	position: absolute;
-	top: 226px;
+	top: 214px;
 	
 	font-size: 45px; /*размер шрифта подобрал на глаз, фотошоп почему-то не выдал font-size*/
 	line-height: 45px;
@@ -836,7 +921,7 @@ span.price-symbol::before {
 }
 
 .catalog-description {
-	margin: -8px;
+	margin: -9px;
 	margin-left: -6px;
 	padding: 0;
 	padding-left: 14px;
@@ -849,10 +934,24 @@ span.price-symbol::before {
 	width: 266px;
 }
 
+.catalog-item a,
+.catalog-item-inner a {
+	color: #ffffff;
+	font-weight: 500;
+
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .catalog-description a:hover,
 .catalog-description a:focus,
 .catalog-description a:active {
 	color: #ffbc9e;
+	border-bottom: 1px solid #ffbc9e;
+}
+
+p.catalog-button {
+	margin-bottom: 0;
 }
 
 .catalog .button,
@@ -908,12 +1007,11 @@ span.price-symbol::before {
 	display: block;
 }
 
-.catalog-item a,
-.catalog-item-inner a {
-	color: #ffffff;
-	font-weight: 500;
-	
-	text-decoration: underline;
+.catalog-item:hover,
+.catalog-item:focus,
+.catalog-item-inner:hover,
+.catalog-item-inner:focus {
+	margin-bottom: 35px;
 }
 /*catalog end*/
 
@@ -921,7 +1019,7 @@ span.price-symbol::before {
 .about-us {
 	margin: 0;
 	margin-top: -44px;
-	margin-bottom: 40px;
+	margin-bottom: 38px;
 	margin-left: 27px;
 	margin-right: 27px;
 	padding: 0;
@@ -1200,13 +1298,13 @@ span.price-symbol::before {
 
 .map .contact {
 	position: absolute;
-	top: 62px;
+	top: 63px;
 	right: 27px;
 	
 	width: 302px;
 	height: 305px;
-	padding-top: 32px;
-	padding-left: 24px;
+	padding-top: 30px;
+	padding-left: 25px;
 	
 	font-size: 14px;
 	line-height: 20px;
@@ -1222,13 +1320,23 @@ span.price-symbol::before {
 	margin: 0;
 }
 
+.contact p.contact-tel {
+	padding-top: 1px;
+	margin-bottom: 4px;
+}
+
+p.contact-tel b {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
 .contact p:first-of-type {
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 }
 
 .contact p:last-of-type {
 	width: 180px;
-	margin-bottom: 26px;
+	margin-bottom: 33px;
 }
 
 .contact b {
@@ -1243,17 +1351,20 @@ span.price-symbol::before {
 .contact .button {
 	width: 252px;
 	height: 44px;
-	padding: 10px 26px;
+	padding: 11px 28px;
 	
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
+	
+	border-radius: 25px;
 }
 /*map end*/
 
 /*footer start*/
 .main-footer {
 	min-height: 100px;
+	margin-top: -3px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1280,6 +1391,8 @@ span.price-symbol::before {
 	
 	padding: 0;
 	margin-right: 10px;
+	margin-left: 2px;
+	margin-top: 22px;
 	
 	font-size: 13px;
 	line-height: 18px;
@@ -1289,8 +1402,15 @@ span.price-symbol::before {
 }
 
 .social-button li {
-	margin-right: 10px;
+	margin-right: 12px;
 }
+
+/*иконки svg*/
+.social-twitter {
+	fill: #ffffff;
+}
+
+/*иконки svg*/
 
 .documentation {
 	position: relative;
@@ -1299,7 +1419,7 @@ span.price-symbol::before {
 	flex-wrap: wrap;
 	justify-content: center;
 	
-	width: 560px;
+	width: 520px;
 	margin: 0;
 	padding: 0;
 	
@@ -1323,14 +1443,20 @@ span.price-symbol::before {
 
 .documentation-list-left,
 .documentation-list-right {
-	margin-right: 40px;
-	padding-left: 0;
+	margin-right: 16px;
+	padding-left: 15px;
 	
 	list-style: none;
 }
 
 .provider {
+	margin-bottom: 3px;
+	
 	font-weight: 700;
+}
+
+.ecology {
+	margin-top: 3px;
 }
 
 .provider::before {
@@ -1338,7 +1464,7 @@ span.price-symbol::before {
 	
 	position: absolute;
 	top: 15px;
-	left: 80px;
+	left: 86px;
 	
 	width: 15px;
 	height: 13px;
@@ -1349,7 +1475,8 @@ span.price-symbol::before {
 
 .footer-copyright {
 	width: 265px;
-	margin-top: 18px;
+	margin-top: -10px;
+	margin-right: -2px;
 	padding-left: 75px;
 	
 	font-size: 12px;
@@ -1361,6 +1488,14 @@ span.price-symbol::before {
 
 .footer-copyright p {
 	margin: 0;
+}
+
+.footer-copyright a {
+	text-decoration: none;
+}
+
+a .footer-company {
+	text-decoration: underline;
 }
 /*footer end*/
 
@@ -1651,8 +1786,9 @@ h1.catalog-title {
 .slider {
   position: relative;
   
-  margin-bottom: 43px;
-  padding-top: 277px;
+  margin-bottom: 40px;
+  padding-top: 276px;
+  padding-left: 1px;
   
   text-align: center;
   color: #ffffff;
@@ -1680,25 +1816,28 @@ h1.catalog-title {
 }
 
 .button-r {
-  display: inline-block;
-  padding: 11px 40px;
+	display: inline-block;
+	min-height: 63px;
+	padding: 9px 40px;
+	padding-top: 7px;
+	margin-top: 5px;
 
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 44px;
-  text-align: center;
-  color: #ffffff;
-  vertical-align: top;
-  text-decoration: none;
-  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 44px;
+	text-align: center;
+	color: #ffffff;
+	vertical-align: top;
+	text-decoration: none;
+	text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 
-  background: #f26843;
-  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  border-radius: 50px;
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
-  border: none;
+	background: #f26843;
+	background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+	border-radius: 50px;
+	box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+	border: none;
 
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .button-r:hover {
@@ -1734,6 +1873,10 @@ h1.catalog-title {
   cursor: pointer;
 }
 
+.slider-controls label:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 #product-1:checked ~ .site-wrapper {
   background-color: #849d8f;
   background-image: url("../img/slider-item1.png");
@@ -1760,3 +1903,4 @@ h1.catalog-title {
 #product-3:checked ~ .site-wrapper label[for="product-3"] {
   background-color: #ffffff;
 }
+

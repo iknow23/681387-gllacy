@@ -388,6 +388,10 @@ a {
 	fill: #ffffff;
 }
 
+.login-link-inner .enter {
+	margin-left: -70px;
+}
+
 .login-link:hover .enter {
 	fill: #000000;
 }
@@ -572,12 +576,18 @@ a.restore:hover {
 }
 
 /*modal-basket start*/
+.basket-wrapper-inner:hover {
+	cursor: pointer;
+}
+
 .basket-wrapper-inner:hover .basket-order {
 	display: block;
 	
 	position: absolute;
 	top: 40px;
 	left: -438px;
+	
+	cursor: default;
 }
 
 .basket-wrapper-inner::after {
@@ -719,7 +729,7 @@ a.basket {
 	min-width: 102px;
 	height: 32px;
 	margin-top: 1px;
-	margin-left: -4px;
+	margin-left: -6px;
 	
 	padding: 8px 17px 8px 46px;
 	
@@ -730,6 +740,7 @@ a.basket {
 
 a.basket-inner {
 	min-width: 117px;
+	padding: 8px 17px 8px 43px;
 	
 	color: #000000;
 	background-color: #ffffff;
@@ -744,6 +755,10 @@ a.basket-inner {
 	height: 20px;
 	
 	fill: #ffffff;
+}
+
+.basket-inner svg {
+	left: 15px;
 }
 
 .basket:hover svg {
@@ -1164,9 +1179,9 @@ li.slide {
 
 .catalog-item-inner {
 	position: relative;
-	
+
 	width: 268px;
-	min-height: 406px;
+	min-height: 362px;
 	margin-right: 24px;
 }
 
@@ -1209,7 +1224,8 @@ p.catalog-image-inner {
 .catalog-price-inner {
 	position: absolute;
 	z-index: 3;
-	top: 214px;
+	top: 213px;
+	left: 1px;
 	
 	font-size: 45px; /*размер шрифта подобрал на глаз, фотошоп почему-то не выдал font-size*/
 	line-height: 45px;
@@ -1287,6 +1303,7 @@ span.price-symbol-inner::before {
 	display: none;
 	
 	position: absolute;
+	
 	min-height: 406px;
 	padding-bottom: 10px;
 	
@@ -1307,6 +1324,12 @@ span.price-symbol-inner::before {
 	
 	border-radius: 5px;
 	box-shadow: 0 8px 20px 2px rgba(0, 0, 0, 0.35);
+}
+
+.catalog-item-hover-inner {
+	position: absolute;
+	
+	z-index: 3;
 }
 
 p.catalog-button {
@@ -1727,7 +1750,7 @@ p.contact-tel b {
 }
 
 .main-footer-inner {
-	margin-top: 22px;
+	margin-top: 24px;
 }
 
 .main-footer a,
@@ -1962,6 +1985,10 @@ p.contact-tel b {
 	border-radius: 20px;
 }
 
+.site-navigation-current a:hover {
+	cursor: default;
+}
+
 .site-navigation-current a:active {
 	color: #000000;
 	text-decoration: none;
@@ -2054,8 +2081,6 @@ h1.catalog-title {
 	align-items: flex-start;
 	
 	width: 880px;
-	
-	outline: 1px solid blue;
 }
 
 .filter .filter-sorting {
@@ -2068,21 +2093,33 @@ h1.catalog-title {
 }
 
 .filter-sorting label {
-	padding-left: 17px;
+	padding-left: 16px;
 }
 
 .filter-sorting select {
-	margin-top: 5px;
-	padding: 8px 5px 8px 10px;
+	margin-top: 6px;
+	padding: 9px 5px 8px 14px;
+	width: 193px;
+	height: 36px;
+	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
 	
 	font-size: 16px;
 	line-height: 18px;
-	font-weight: 400;
-	
+	font-weight: 500;
+
 	color: #ffffff;
-	
 	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 25px;
+	border-radius: 20px;
+}
+
+.filter-sorting select:hover {
+	color: #000000;
+	
+	cursor: pointer;
 }
 
 .filter-sorting option {
@@ -2097,13 +2134,14 @@ h1.catalog-title {
 .filter-range {
 	width: 220px;
 	height: 62px;
+	margin-left: 16px;
 	
 	color: #ffffff;
 }
 
 .filter-range-title {
-	padding-left: 17px;
-	margin-bottom: 15px;
+	padding-left: 15px;
+	margin-bottom: 5px;
 	
 	font-size: 14px;
 	line-height: 16px;
@@ -2114,18 +2152,21 @@ h1.catalog-title {
 	position: relative;
 
 	margin-bottom: 32px;
+	padding-top: 18px;
+	padding-left: 20px;
 }
 
 .range-controls .scale {
-	width: 176px;
+	width: 178px;
 	height: 2px;
-	margin: 0 auto;
+	margin-left: 0;
+	margin-right: 0;
 	
 	background: rgba(255, 255, 255, 0.3);
 }
 
 .range-controls .bar {
-	width: 80%;
+	width: 127px;
 	height: 2px;
 
 	background: #ffffff;
@@ -2133,11 +2174,11 @@ h1.catalog-title {
 
 .range-toggle {
 	position: absolute;
-	top: -9px;
+	top: 10px;
   
-	width: 4px;
-	height: 4px;
-
+	width: 20px;
+	height: 20px;
+	
 	background: #ababab;
 	border: 8px solid #ffffff;
 	border-radius: 50%;
@@ -2150,92 +2191,21 @@ h1.catalog-title {
 }
 
 .range-toggle-min {
-	left: 0;
+	left: 35px;
 }
 
 .range-toggle-max {
-	left: 80%;
+	left: 133px;
 }
 
 .range-wrap {
 	position: relative;
 	
-	width: 100px;
-	min-height: 50px;
+	width: 220px;
+	min-height: 36px;
 	
 	border-radius: 25px;
 	background-color: rgba(255, 255, 255, 0.2);
-}
-
-.fat-content {
-	position: relative;
-	
-	width: 442px;
-	padding: 0;
-}
-
-.fat-content legend {
-	padding-left: 17px;
-}
-
-.fat-content ul {
-	display: flex;
-	justify-content: space-between;
-
-	margin-top: 5px;
-	padding: 9px 15px;
-}
-
-.fat-content li {
-	margin-left: 25px;
-}
-
-.fat-content label::before {
-	content: "";
-	
-	position: absolute;
-	top: 26px;
-	left: 5px;
-	
-	width: 25px;
-	height: 25px;
-	
-	background-image: url("../img/radio-off.svg");
-	background-repeat: no-repeat;
-}
-
-.filler-content {
-	flex-grow: 1;
-	
-	margin-right: 14px;
-	padding: 0;
-}
-
-.filler-content legend {
-	padding-left: 14px;
-}
-
-.filler-content ul {
-	display: flex;
-	justify-content: space-between;
-
-	margin-top: 5px;
-	margin-bottom: 0;
-	padding: 9px 15px;
-}
-
-.filler-content li {
-	margin-left: 25px;
-}
-
-.filter button {
-	align-self: flex-end;
-	
-	width: 146px;
-	margin-right: 18px;
-	padding: 8px 0;
-	
-	border-radius: 50%;
 }
 
 .filter label,
@@ -2246,12 +2216,184 @@ h1.catalog-title {
 	color: #ffffff;
 }
 
+.fat-content {
+	position: relative;
+	
+	width: 415px;
+	margin-left: 16px;
+	padding: 0;
+}
+
+.fat-content legend {
+	padding-left: 13px;
+}
+
+.fat-content ul {
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 5px;
+	padding: 9px 15px;
+}
+
+label.filter-zero {
+	padding-left: 44px;
+	margin-right: -15px;
+}
+
+.fat-content label {
+	position: relative;
+
+	padding: 43px;
+	
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	
+	cursor: pointer;
+}
+
+.filter-input-radio + label::before {
+	content: "";
+	
+	position: absolute;
+	top: 41px;
+	left: 10px;
+	
+	width: 25px;
+	height: 25px;
+	
+	background-image: url("../img/radio-off.svg");
+	background-repeat: no-repeat;
+	
+	opacity: 0.8;
+}
+
+.filter-input-radio:checked + label::before {
+	background-image: url("../img/radio-on.svg");
+	
+	opacity: 0.4;
+}
+
+.filter-input-radio + label:hover::before,
+.filter-input-radio + label:focus::before,
+.filter-input-radio + label:active::before {
+	opacity: 1;
+}
+
+.filler-content {
+	margin-right: 13px;
+	padding: 0;
+}
+
+.filler-content legend {
+	padding-left: 14px;
+}
+
+.filler-content label {
+	position: relative;
+
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	
+	cursor: pointer;
+}
+
+.filter-input-checkbox + label::before {
+	content: "";
+	
+	position: absolute;
+	top: -3px;
+	left: 19px;
+	
+	width: 25px;
+	height: 25px;
+	
+	background-image: url("../img/checkbox-off.svg");
+	background-repeat: no-repeat;
+
+	opacity: 0.8;
+}
+
+.filter-input-checkbox-first + label::before {
+	content: "";
+	
+	position: absolute;
+	top: -3px;
+	left: 14px;
+	
+	width: 25px;
+	height: 25px;
+	
+	background-image: url("../img/checkbox-off.svg");
+	background-repeat: no-repeat;
+	
+	opacity: 0.8;
+}
+
+.filter-input-checkbox-first + label:hover::before,
+.filter-input-checkbox + label:hover::before,
+.filter-input-checkbox + label:focus::before,
+.filter-input-checkbox + label:active::before {
+	opacity: 1;
+}
+
+.filter-input-checkbox:checked + label::before {
+	background-image: url("../img/checkbox-on.svg");
+}
+
+.filter-input-checkbox-first:checked + label::before {
+	background-image: url("../img/checkbox-on.svg");
+	
+	opacity: 0.4;
+}
+
+.filler-content ul {
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+label.filter-chokolate {
+	padding-left: 45px;
+}
+
+label.filter-sugar {
+	padding-left: 52px;
+}
+
+label.filter-fruit {
+	padding-left: 54px;
+}
+
+label.filter-syrup {
+	padding-left: 55px;
+}
+
+label.filter-jam {
+	padding-left: 53px;
+}
+
+.filter button {
+	align-self: flex-end;
+	
+	width: 146px;
+	margin-right: 18px;
+	margin-bottom: 1px;
+	padding: 8px 0;
+	
+	border-radius: 50%;
+}
+
 .filter-group {
 	border: none;
 }
 
 .filter-group ul {
-	padding: 8px 0px 8px 10px;
+	padding: 8px 18px 8px 0px;
 	
 	list-style: none;
 
@@ -2266,9 +2408,9 @@ h1.catalog-title {
 	color: #ffffff;
 	
 	background-color: rgba(255, 255, 255, 0.3);
-	border-radius: 10px;
+	border-radius: 20px;
 	border: 2px solid #ffffff;
-	
+
 	cursor: pointer;
 }
 
@@ -2281,6 +2423,7 @@ h1.catalog-title {
 
 .filter button:active {
 	background-color: #eaeaea;
+	box-shadow: inset 0 3px 3px -1px rgba(0, 0, 0, 0.5);
 }
 /*filters end*/
 
@@ -2291,27 +2434,39 @@ h1.catalog-title {
 	
 	display: flex;
 	justify-content: space-between;
-	width: 140px;
+	width: 200px;
 	min-height: 35px;
 	margin-left: auto;
-	margin-right: 33px;
+	margin-right: -1px;
+	margin-top: -3px;
 	padding: 0;
 	
 	list-style: none;
 }
 
-.pagination-item a {
+.pagination-list a {
+	display: inline-block;
+	
+	min-width: 26px;
+	min-height: 26px;
+	margin-right: 3px;
+	padding-top: 4px;
+	
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	
+	text-align: center;
+	vertical-align: middle;
 	color: #ffffff;
+	background-color: transparent;
+
+	border-radius: 50%;
 }
 
 .pagination-list a:hover,
 .pagination-list a:focus {
-	width: 25px;
-	height: 25px;
-	padding: 2px 4px;
-	
 	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 50%;
 	
 	cursor: pointer;
 }
@@ -2322,43 +2477,41 @@ h1.catalog-title {
 	background-color: #ffffff;
 }
 
-.pagination-item-current a {
-	display: block;
-	padding: 3px 8px;
-	margin-right: -10px;
-	
-	font-size: 16px;
-	line-height: 18px;
-	font-weight: 500;
-	color: #000000;
-	background-color: #ffffff;
-	
-	border-radius: 50%;
-}
-
-.pagination-left::before {
-	content: "";
-	
-	position: absolute;
-	top: 4px;
-	left: -20px;
-	width: 10px;
-	height: 15px;
+.prev a {
+	margin-right:6px;
+	font-size: 0;
 	
 	background-image: url("../img/pagination-left.png");
 	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-.pagination-right::after {
-	content: "";
-	
-	position: absolute;
-	top: 4px;
-	left: 165px;
-	width: 10px;
-	height: 15px;
+.next a {
+	margin-left: 5px;
+	font-size: 0;
 	
 	background-image: url("../img/pagination-right.png");
 	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.prev a:hover,
+.next a:hover {
+	background-color: transparent;
+}
+
+.prev a:hover {
+	cursor: default;
+}
+
+.pagination-item-current a {
+	color: #000000;
+	background-color: #ffffff;
+}
+
+.pagination-item-current a:hover {
+	background-color: #ffffff;
+	
+	cursor: default;
 }
 /*pagination end*/

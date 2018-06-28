@@ -1,6 +1,6 @@
 body {
 	min-width: 1200px;
-		
+
 	font-family: "Roboto", Arial, sans-serif;
 	font-size: 16px;
 	line-height: 22px;
@@ -159,10 +159,6 @@ a {
 	width: 100px;
 	height: 40px;
 } /*вставил невидимую перемычку-блок, чтоб подменю не скрывалось*/
-
-.site-navigation li:last-child {
-	margin-left: -2px;
-}
 
 .sub-nav {
 	display: none;
@@ -638,10 +634,9 @@ a.restore:hover {
 	
 	width: 11px;
 	height: 11px;
-	
-	font-size: 0;
+
 	border: 0;
-	
+
 	cursor: pointer;
 }
 
@@ -1189,19 +1184,17 @@ li.slide {
 	margin-right: 0;
 }
 
-.catalog-item span.hit {
+.catalog-item .hit {
 	position: absolute;
 	z-index: 3;
 	top: 5px;
 	width: 65px;
 	height: 65px;
-	
-	font-size: 0;
-	
+
 	background: url("../img/hit.png") no-repeat; /* Фоновый рисунок для замены текста */
 }
 
-.catalog-item span.first-hit {
+.catalog-item .first-hit {
 	top: 5px;
 	left: 0;
 }
@@ -1224,8 +1217,8 @@ p.catalog-image-inner {
 .catalog-price-inner {
 	position: absolute;
 	z-index: 3;
-	top: 213px;
-	left: 1px;
+	top: 214px;
+	left: -1px;
 	
 	font-size: 45px; /*размер шрифта подобрал на глаз, фотошоп почему-то не выдал font-size*/
 	line-height: 45px;
@@ -1233,18 +1226,18 @@ p.catalog-image-inner {
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.catalog-item span.price-symbol,
-.catalog-item-inner span.price-symbol-inner {
-	font-size: 0px;
+.catalog-price-inner {
+	top: 213px;
+	left: 1px;
 }
 
-span.price-symbol::before,
-span.price-symbol-inner::before {
+.price-symbol::before,
+.price-symbol-inner::before {
 	content: "";
 	
 	position: absolute;
 	top: 6px;
-	left: 80px;
+	left: 81px;
 	
 	width: 30px;
 	height: 34px;
@@ -1253,9 +1246,13 @@ span.price-symbol-inner::before {
 	background-repeat: no-repeat;
 }
 
+.catalog-item-inner:nth-child(4n+1) .catalog-price-inner {
+	left: -1px;
+}
+
 .catalog-item span.price-low,
 .catalog-item-inner span.price-low-inner {
-	margin-left: 13px;
+	margin-left: 25px;
 	
 	font-size: 30px;
 }
@@ -1324,6 +1321,12 @@ span.price-symbol-inner::before {
 	
 	border-radius: 5px;
 	box-shadow: 0 8px 20px 2px rgba(0, 0, 0, 0.35);
+}
+
+.catalog-item-inner .bilberry {
+	margin: 0;
+	margin-top: -9px;
+	padding-left: 3px; /*делаю перенос названия товара!*/
 }
 
 .catalog-item-hover-inner {
@@ -2021,7 +2024,8 @@ p.contact-tel b {
 	color: #ffffff;
 }
 
-.breadcrumbs li::after {
+.breadcrumbs li:first-child::after,
+.breadcrumbs li:nth-child(2)::after {
 	content: "»";
 	
 	position: absolute;
@@ -2030,12 +2034,6 @@ p.contact-tel b {
 	width: 7px;
 	height: 7px;
 }
-
-.breadcrumbs-current::after {
-	content: "";
-	
-	font-size: 0;
-}	
 
 .breadcrumbs a {
 	text-decoration: none;
@@ -2076,6 +2074,8 @@ h1.catalog-title {
 }
 
 .filter {
+	position: relative;
+
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -2114,6 +2114,20 @@ h1.catalog-title {
 	color: #ffffff;
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 20px;
+}
+
+.filter-sorting::after {
+	content: "";
+	
+	position: absolute;
+	top: 37px;
+	left: 169px;
+	
+	width: 9px;
+	height: 5px;
+
+	background-image: url("../img/select-arrow.svg");
+	background-repeat: no-repeat;
 }
 
 .filter-sorting select:hover {
@@ -2419,6 +2433,7 @@ label.filter-jam {
 	color: #000000;
 	
 	background-color: #ffffff;
+	outline: none;
 }
 
 .filter button:active {
@@ -2471,6 +2486,11 @@ label.filter-jam {
 	cursor: pointer;
 }
 
+.next a:hover,
+.next a:focus {
+	background-color: transparent;
+}
+
 .pagination-list a:active {
 	color: #000000;
 	
@@ -2479,7 +2499,6 @@ label.filter-jam {
 
 .prev a {
 	margin-right:6px;
-	font-size: 0;
 	
 	background-image: url("../img/pagination-left.png");
 	background-repeat: no-repeat;
@@ -2488,7 +2507,6 @@ label.filter-jam {
 
 .next a {
 	margin-left: 5px;
-	font-size: 0;
 	
 	background-image: url("../img/pagination-right.png");
 	background-repeat: no-repeat;

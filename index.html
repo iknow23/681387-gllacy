@@ -267,16 +267,18 @@
 			<!-- map start -->
 			<section class="map">
 				<h2 class="visually-hidden">Как нас найти?</h2>
-				<img src="img/map.jpg" width="1200" height="430" alt="Наш офис находится по адресу: ул.Большая Конюшенная 19/8, Санкт-Петербург">
+				<img class="map-cursor" src="img/map-ice.png" width="218" height="142" alt="Курсор нахождения магазина на карте">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2826.39720994496!2d30.32876111369067!3d59.93936613213159!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1530251851754" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<p class="map-image"><img src="img/map.jpg" width="1200" height="430" alt="Наш офис находится по адресу: ул.Большая Конюшенная 19/8, Санкт-Петербург"></p>
 				<div class="contact">
-					<p>Адрес главного офиса
+					<p class="contact-adress">Адрес главного офиса
 					и офлайн-магазина:
 					<b>ул. Большая Конюшенная
 					19/8, Санкт-Петербург</b></p>
 					<p class="contact-tel">Для заказов по телефону:
 					<b>8 812 450-25-25</b>
 					(с 10 до 20 ежедневно)</p>
-					<a class="button" href="#">Форма обратной связи</a>
+					<a class="button feedback-link" href="#">Форма обратной связи</a>
 				</div>
 			</section>
 			<!-- map end -->
@@ -343,5 +345,66 @@
 		</form>
 	</section>
 	<!-- modal-feedback end -->
+	
+	<!-- script start -->
+	<script>
+		var link = document.querySelector(".feedback-link");
+		var popup = document.querySelector(".modal-feedback");
+		var close = popup.querySelector(".modal-close");
+		var form = popup.querySelector("form");
+		var login = popup.querySelector("[name=first-name]");
+		var mail = popup.querySelector("[name=mail]");
+		
+		var isStorageSupport = true;
+		var storage = "";
+
+		try {
+			storage = localStorage.getItem("login");
+		} catch (err) {
+			isStorageSupport = false;
+		}
+
+		link.addEventListener("click", function (evt) {
+			evt.preventDefault();
+			popup.classList.add("modal-show");
+			
+			if (storage) {
+				login.value = storage;
+				mail.focus();
+			} else {
+				login.focus();
+			}
+		});
+
+		close.addEventListener("click", function (evt) {
+			evt.preventDefault();
+			popup.classList.remove("modal-show");
+			popup.classList.remove("modal-error");
+		});
+		
+		form.addEventListener("submit", function (evt) {
+			if (!login.value || !mail.value) {
+				evt.preventDefault();
+				popup.classList.remove("modal-error");
+				popup.offsetWidth = popup.offsetWidth;
+				popup.classList.add("modal-error");
+			} else {
+				if (isStorageSupport) {
+					localStorage.setItem("login", login.value);
+				}
+			}
+		});
+		
+		window.addEventListener("keydown", function (evt) {
+			if (evt.keyCode === 27) {
+				evt.preventDefault();
+				if (popup.classList.contains("modal-show")) {
+					popup.classList.remove("modal-show");
+					popup.classList.remove("modal-error");
+				}
+			}
+		});
+	</script>
+	<!-- script end -->
 </body>
 </html>

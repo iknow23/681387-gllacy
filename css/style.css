@@ -1672,13 +1672,38 @@ p.catalog-button {
 /*map start*/
 .map {
 	position: relative;
-	
+
 	width: 100%;
 	min-height: 430px;
 }
 
+.map-cursor {
+	position: absolute;
+	z-index: 3;
+	top: 155px;
+    left: 290px;
+}
+
+.map p.map-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	margin: 0;
+}
+
+.map iframe {
+	position: relative;
+	z-index: 2;
+
+	border: none;
+}
+
 .map .contact {
 	position: absolute;
+	z-index: 2;
+
 	top: 63px;
 	right: 27px;
 	
@@ -1929,13 +1954,64 @@ p.contact-tel b {
 /*footer end*/
 
 /*modal-feedback start*/
+@keyframes bounce {
+	0% {
+		transform: translateY(-2000px);
+	}
+
+	70% {
+		transform: translateY(30px);
+	}
+
+	90% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes shake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		transform: translateX(-10px);
+	}
+
+	20%, 40%, 60%, 80% {
+		transform: translateX(10px);
+	}
+}
+
 .modal-feedback {
 	display: none;
 	
-	color: #000000; /*временно*/
+	position: absolute;
+	z-index: 10;
+	top: 340px;
+	left: 50%;
+	
+	width: 476px;
+	margin-left: -236px;
+	padding: 16px 25px;
+	
+	color: #323232;
 	
 	background-color: #f8f7f4;
 	border-radius: 10px;
+}
+
+.modal-show {
+	display: block;
+	
+	animation: bounce 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-feedback h2 {
@@ -1965,9 +2041,136 @@ p.contact-tel b {
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
-	
+
 	border: none;
 	cursor: pointer;
+}
+
+.modal-close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+
+	width: 18px;
+	height: 18px;
+
+	font-size: 0;
+
+	border: 0;
+
+	cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+	content: "";
+
+	position: absolute;
+	top: 8px;
+	left: 0;
+
+	width: 23px;
+	height: 2px;
+
+	background-color: #323232;
+}
+
+.modal-close::before {
+	transform: rotate(45deg);
+}
+
+.modal-close::after {
+	transform: rotate(-45deg);
+}
+
+.modal-feedback h2 {
+	margin: 0;
+	margin-bottom: 18px;
+
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.feedback-form p {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"] {
+	box-sizing: border-box;
+	width: 266px;
+	padding: 5px 15px;
+
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+
+	color: #000000;
+	
+	background-color: #ffffff;
+}
+
+.feedback-form textarea {
+	box-sizing: border-box;
+	width: 428px;
+	padding: 5px 15px;
+
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+
+	color: #000000;
+	border-radius: 5px;
+}
+
+.feedback-form input:hover,
+.feedback-form textarea:hover {
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	padding: 4px 14px;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+	border: none;
+	padding: 6px 16px;
+}
+
+.feedback-form button {
+	display: flex;
+	margin-left: auto;
+}
+
+.feedback-form .button {
+	width: 138px;
+	height: 45px;
+	padding: 11px 23px;
+	margin-bottom: 26px;
+
+	font-size: 18px;
+	line-height: 24px;
+	color: #ffffff;
+
+	text-align: center;
+	background-color: #eb563b;
+	border: none;
+	border-radius: 23px;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"] {
+	
+	font-weight: 700;
+}
+
+.feedback-form input::-webkit-input-placeholder,
+.feedback-form textarea::-webkit-textarea-placeholder {
+	font-weight: 400;
+}
+
+.feedback-form input:-moz-placeholder,
+.feedback-form textarea:-moz-placeholder {
+	font-weight: 400;
 }
 /*modal-feedback end*/
 
@@ -2116,21 +2319,12 @@ h1.catalog-title {
 	border-radius: 20px;
 }
 
-.filter-sorting::after {
-	content: "";
-	
-	position: absolute;
-	top: 37px;
-	left: 169px;
-	
-	width: 9px;
-	height: 5px;
-
+.filter-select-icon {
 	background-image: url("../img/select-arrow.svg");
 	background-repeat: no-repeat;
 }
 
-.filter-sorting select:hover {
+.filter-select-icon:hover {
 	color: #000000;
 	
 	cursor: pointer;
@@ -2293,6 +2487,10 @@ label.filter-zero {
 .filter-input-radio + label:focus::before,
 .filter-input-radio + label:active::before {
 	opacity: 1;
+}
+
+.filter-input-radio:focus+label, .filter-input-radio:hover+label {
+	outline: 1px solid blue;
 }
 
 .filler-content {

@@ -10,6 +10,10 @@ body {
 	background-color: #849d8f;
 }
 
+.gradient {
+	background: linear-gradient(to bottom, #9db1a5 0%, #879F92 20%);
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -342,8 +346,8 @@ a {
 }
 
 .search-form input:focus {
-	border: none;
-	padding: 9px 13px;
+	border: 2px solid #8fbdec;
+	padding: 9px 11px;
 }
 
 .search-navigation {
@@ -508,8 +512,8 @@ a {
 }
 
 .login-form input:focus {
-	border: none;
-	padding: 11px 14px;
+	border: 2px solid #8fbdec;
+	padding: 9px 12px;
 }
 
 .login-form .button {
@@ -1625,10 +1629,6 @@ p.catalog-button {
 	border-radius: 5px;
 }
 
-.subscription-form input:focus {
-	border-color: #663d15;
-}
-
 .subscription-form input[type="email"] {
 	font-weight: 700;
 	color: #000000;
@@ -1648,8 +1648,8 @@ p.catalog-button {
 }
 
 .subscription-form input:focus {
-	border: none;
-	padding: 8px 16px;
+	border: 2px solid #8fbdec;
+	padding: 7px 14px;
 }
 
 .subscription-form button {
@@ -1686,13 +1686,6 @@ p.catalog-button {
 
 	width: 100%;
 	min-height: 430px;
-}
-
-.map-cursor {
-	position: absolute;
-	z-index: 3;
-	top: 155px;
-    left: 290px;
 }
 
 .map p.map-image {
@@ -1998,11 +1991,9 @@ p.contact-tel b {
 }
 
 .modal-feedback {
-	display: none;
-	
 	position: absolute;
-	z-index: 10;
-	top: 340px;
+	z-index: 11;
+	top: 200px;
 	left: 50%;
 	
 	width: 476px;
@@ -2013,12 +2004,24 @@ p.contact-tel b {
 	
 	background-color: #f8f7f4;
 	border-radius: 10px;
+	
+	animation: bounce 0.6s;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	
+	height:  100vh;
+	width:  100%;
+
+	background-color: rgba(0,0,0,0.4);
 }
 
 .modal-show {
 	display: block;
-	
-	animation: bounce 0.6s;
 }
 
 .modal-error {
@@ -2129,7 +2132,7 @@ p.contact-tel b {
 
 	font-size: 16px;
 	line-height: 24px;
-	font-weight: 400;
+	font-weight: 700;
 
 	color: #000000;
 	border-radius: 5px;
@@ -2143,8 +2146,8 @@ p.contact-tel b {
 
 .feedback-form input:focus,
 .feedback-form textarea:focus {
-	border: none;
-	padding: 6px 16px;
+	border: 2px solid #8fbdec;
+	padding: 4px 14px;
 }
 
 .feedback-form button {
@@ -2170,12 +2173,11 @@ p.contact-tel b {
 
 .feedback-form input[type="text"],
 .feedback-form input[type="email"] {
-	
 	font-weight: 700;
 }
 
 .feedback-form input::-webkit-input-placeholder,
-.feedback-form textarea::-webkit-textarea-placeholder {
+.feedback-form textarea::-webkit-input-placeholder {
 	font-weight: 400;
 }
 
@@ -2333,11 +2335,15 @@ h1.catalog-title {
 .filter-select-icon {
 	background-image: url("../img/select-arrow.svg");
 	background-repeat: no-repeat;
+	background-position: 168px 13px;
 }
 
 .filter-select-icon:hover {
 	color: #000000;
-	
+	background-image: url("../img/select-arrow-black.svg");
+	background-repeat: no-repeat;
+	background-position: 168px 13px;
+
 	cursor: pointer;
 }
 
@@ -2404,14 +2410,14 @@ h1.catalog-title {
 	box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
 	cursor: pointer;
 	
-	transition: all 0.5s linear;
+	transition: all 0.1s linear;
 }
 
 .range-toggle:hover {
 	width: 21px;
 	height: 21px;
-	
-	background: #1c4f80;
+	margin-top: -1px;
+	margin-left: -1px;
 }
 
 .range-toggle-min {
@@ -2457,6 +2463,7 @@ h1.catalog-title {
 	justify-content: space-between;
 
 	margin-top: 5px;
+	margin-bottom: 14px;
 	padding: 9px 15px;
 }
 
@@ -2468,8 +2475,9 @@ label.filter-zero {
 .fat-content label {
 	position: relative;
 
-	padding: 43px;
-	
+	padding-top: 2px;
+	padding-bottom: 4px;
+
 	font-size: 16px;
 	line-height: 18px;
 	font-weight: 500;
@@ -2479,11 +2487,12 @@ label.filter-zero {
 
 .filter-input-radio + label::before {
 	content: "";
-	
-	position: absolute;
-	top: 41px;
-	left: 10px;
-	
+
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: -33px;
+	margin-right: 8px;
+	margin-top: -1px;
 	width: 25px;
 	height: 25px;
 	
@@ -2493,20 +2502,39 @@ label.filter-zero {
 	opacity: 0.8;
 }
 
-.filter-input-radio:checked + label::before {
-	background-image: url("../img/radio-on.svg");
-	
-	opacity: 0.4;
-}
-
 .filter-input-radio + label:hover::before,
 .filter-input-radio + label:focus::before,
 .filter-input-radio + label:active::before {
 	opacity: 1;
 }
 
-.filter-input-radio:focus+label, .filter-input-radio:hover+label {
-	outline: 1px solid blue;
+.filter-option:nth-child(2) label::before {
+	padding-left: 20px;
+	margin-left: -22px;
+}
+
+.filter-input-radio:checked + label::before {
+	background-image: url("../img/radio-on.svg");
+}
+
+/*фон для отключенной отмеченной радиокопки*/
+.filter-input-radio:disabled:checked + label::before {
+	background-image: url("../img/radio-on.svg");
+
+	opacity: 0.4;
+}
+
+/*фон для отключенной НЕ отмеченной радиокопки*/
+.filter-input-radio:disabled + label::before {
+	background-image: url("../img/radio-off.svg");
+
+	opacity: 0.4;
+}
+
+.filter-input-radio:focus+label,
+.filter-input-checkbox-first:focus+label,
+.filter-input-checkbox:focus+label {
+	outline: 1px solid #6C9ACB;
 }
 
 .filler-content {
@@ -2532,8 +2560,8 @@ label.filter-zero {
 	content: "";
 	
 	position: absolute;
-	top: -3px;
-	left: 19px;
+	top: -2px;
+	left: 21px;
 	
 	width: 25px;
 	height: 25px;
@@ -2548,7 +2576,7 @@ label.filter-zero {
 	content: "";
 	
 	position: absolute;
-	top: -3px;
+	top: -2px;
 	left: 14px;
 	
 	width: 25px;
@@ -2567,13 +2595,24 @@ label.filter-zero {
 	opacity: 1;
 }
 
+.filter-input-checkbox-first:checked + label::before,
 .filter-input-checkbox:checked + label::before {
 	background-image: url("../img/checkbox-on.svg");
 }
 
-.filter-input-checkbox-first:checked + label::before {
+/*фон для отключенного отмеченного чекбокса*/
+.filter-input-checkbox-first:disabled:checked + label::before,
+.filter-input-checkbox:disabled:checked + label::before {
 	background-image: url("../img/checkbox-on.svg");
-	
+
+	opacity: 0.4;
+}
+
+/*фон для отключенного НЕ отмеченного чекбокса*/
+.filter-input-checkbox-first:disabled + label::before,
+.filter-input-checkbox:disabled + label::before {
+	background-image: url("../img/checkbox-off.svg");
+
 	opacity: 0.4;
 }
 

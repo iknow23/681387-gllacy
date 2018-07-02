@@ -48,14 +48,16 @@
 				<div class="main-navigation-right">
 					<ul class="user-navigation">
 						<li class="modal-search">
-						<svg class="loup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><path d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/></svg>
-							<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-								<h2 class="visually-hidden">Поиск по сайту</h2>
-								<p class="search-navigation">
-									<label class="visually-hidden" for="main-search">Поиск</label>
-									<input class="site-search" type="text" name="search" id="main-search" placeholder="Что ищем?">
-								</p>
-							</form>
+							<a href="#">
+								<svg class="loup" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><path d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/></svg>
+								<form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+									<h2 class="visually-hidden">Поиск по сайту</h2>
+									<p class="search-navigation">
+										<label class="visually-hidden" for="main-search">Поиск</label>
+										<input class="site-search" type="text" name="search" id="main-search" placeholder="Что ищем?">
+									</p>
+								</form>
+							</a>
 						</li>
 						<li class="login-wrapper">
 							<a class="login-link" href="#">
@@ -267,7 +269,6 @@
 			<!-- map start -->
 			<section class="map">
 				<h2 class="visually-hidden">Как нас найти?</h2>
-				<img class="map-cursor" src="img/map-ice.png" width="218" height="142" alt="Курсор нахождения магазина на карте">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2826.39720994496!2d30.32876111369067!3d59.93936613213159!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1530251851754" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
 				<p class="map-image"><img src="img/map.jpg" width="1200" height="430" alt="Наш офис находится по адресу: ул.Большая Конюшенная 19/8, Санкт-Петербург"></p>
 				<div class="contact">
@@ -326,30 +327,32 @@
 	</div>
 	
 	<!-- modal-feedback start -->
-	<section class="modal modal-feedback">
-		<h2>Мы обязательно Вам ответим!</h2>
-		<form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
-			<p>
-				<label class="visually-hidden" for="name">Введите Ваше имя</label>
-				<input type="text" id="name" name="first-name" placeholder="Как вас зовут?">
-			</p>
-			<p>
-				<label class="visually-hidden" for="feedback-mail">Введите Вашу электронную почту?</label>
-				<input type="email" id="feedback-mail" name="mail" placeholder="Ваша почта для ответа?">
-			</p>
-			<p>
-				<textarea cols="35" placeholder="Напишите что-нибудь..."></textarea>
-			</p>
-			<button class="button" type="submit">Отправить</button>
-			<button class="modal-close" type="button">Закрыть</button>
-		</form>
-	</section>
+	<div class="overlay">
+		<section class="modal modal-feedback">
+			<h2>Мы обязательно Вам ответим!</h2>
+			<form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+				<p>
+					<label class="visually-hidden" for="name">Введите Ваше имя</label>
+					<input type="text" id="name" name="first-name" placeholder="Как вас зовут?">
+				</p>
+				<p>
+					<label class="visually-hidden" for="feedback-mail">Введите Вашу электронную почту?</label>
+					<input type="email" id="feedback-mail" name="mail" placeholder="Ваша почта для ответа?">
+				</p>
+				<p>
+					<textarea cols="35" placeholder="Напишите что-нибудь..."></textarea>
+				</p>
+				<button class="button" type="submit">Отправить</button>
+				<button class="modal-close" type="button">Закрыть</button>
+			</form>
+		</section>
+	</div>
 	<!-- modal-feedback end -->
 	
 	<!-- script start -->
 	<script>
 		var link = document.querySelector(".feedback-link");
-		var popup = document.querySelector(".modal-feedback");
+		var popup = document.querySelector(".overlay");
 		var close = popup.querySelector(".modal-close");
 		var form = popup.querySelector("form");
 		var login = popup.querySelector("[name=first-name]");

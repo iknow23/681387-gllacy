@@ -1323,6 +1323,17 @@ p.catalog-image-inner {
 	box-shadow: 0 8px 20px 2px rgba(0, 0, 0, 0.35);
 }
 
+.catalog-item-inner:hover .catalog-image-inner {
+	position: relative;
+	z-index: 5;
+}
+.catalog-item-inner:hover .catalog-price-inner {
+	z-index: 6;
+}
+.catalog-item-inner:hover .catalog-description-inner {
+	z-index: 8;
+}
+
 .catalog-item-inner .bilberry {
 	margin: 0;
 	margin-top: -9px;
@@ -2392,9 +2403,14 @@ h1.catalog-title {
 	border-radius: 50%;
 	box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
 	cursor: pointer;
+	
+	transition: all 0.5s linear;
 }
 
 .range-toggle:hover {
+	width: 21px;
+	height: 21px;
+	
 	background: #1c4f80;
 }
 

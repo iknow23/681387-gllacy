@@ -1153,8 +1153,7 @@ li.slide {
 .catalog-list {
 	margin: 0;
 	padding: 0;
-	padding-left: -1px;
-	
+
 	list-style: none;
 }
 
@@ -1163,8 +1162,7 @@ li.slide {
 	flex-wrap: wrap;
 
 	padding: 0;
-	padding-left: -1px;
-	
+
 	list-style: none;
 }
 

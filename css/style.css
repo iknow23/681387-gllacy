@@ -1026,6 +1026,8 @@ li.slide {
 	min-height: 230px;
 	
 	margin-bottom: 34px;
+	
+	text-align: center;
 }
 
 .discount-list {
@@ -1035,6 +1037,9 @@ li.slide {
 	padding: 0;
 	
 	list-style: none;
+	
+	margin: 30px 175px;
+	text-align: left;
 }
 
 .discount-list .button:hover,
@@ -2067,7 +2072,8 @@ p.contact-tel b {
 	height: 18px;
 
 	font-size: 0;
-
+	
+	background: transparent;
 	border: 0;
 
 	cursor: pointer;

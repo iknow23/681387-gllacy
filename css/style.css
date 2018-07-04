@@ -265,9 +265,10 @@ a {
 }
 
 /*li.modal-search start*/
-.user-navigation .modal-search {
+.user-navigation a.modal-search {
 	position: relative;
 	z-index: 2;
+	display: block;
 	
 	width: 32px;
 	height: 32px;
@@ -291,7 +292,7 @@ a {
 
 .modal-search .loup {
 	margin-top: 6px;
-	margin-left: 8px;
+	margin-left: 6px;
 	
 	fill: #ffffff;
 }
@@ -338,7 +339,12 @@ a {
 .search-form input::-webkit-input-placeholder {
 	font-weight: 400;
 }
-.search-form input:-moz-placeholder {
+
+.search-form input::-moz-placeholder {
+	font-weight: 400;
+}
+
+.search-form input:-ms-input-placeholder {
 	font-weight: 400;
 }
 
@@ -385,7 +391,7 @@ a {
 }
 
 .login-link .enter {
-	margin-left: -66px;
+	margin-left: -70px;
 	
 	fill: #ffffff;
 }
@@ -403,6 +409,7 @@ a {
 	
 	margin: 0;
 	margin-top: -21px;
+	margin-right: 4px;
 }
 
 .user-navigation a.login-link {
@@ -496,7 +503,11 @@ a {
 .login-form input::-webkit-input-placeholder {
 	font-weight: 400;
 }
-.login-form input:-moz-placeholder {
+.login-form input::-moz-placeholder {
+	font-weight: 400;
+}
+
+.login-form input:-ms-input-placeholder {
 	font-weight: 400;
 }
 
@@ -1317,6 +1328,8 @@ p.catalog-image-inner {
 .catalog-item:focus .catalog-item-hover,
 .catalog-item-inner:hover .catalog-item-hover-inner,
 .catalog-item-inner:focus .catalog-item-hover-inner {
+	display: block;
+	padding-top: 340px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -1638,7 +1651,11 @@ p.catalog-button {
 	font-weight: 400;
 }
 
-.subscription-form input:-moz-placeholder {
+.subscription-form input::-moz-placeholder {
+	font-weight: 400;
+}
+
+.subscription-form input:-ms-input-placeholder {
 	font-weight: 400;
 }
 
@@ -1774,8 +1791,8 @@ p.contact-tel b {
 
 /*footer start*/
 .main-footer {
-	min-height: 100px;
-	margin-top: -3px;
+	display: block;
+	min-height: 95px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -2035,7 +2052,8 @@ p.contact-tel b {
 	color: #323232;
 }
 
-.modal-feedback input {
+.modal-feedback input,
+.modal-feedback textarea {
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
@@ -2182,8 +2200,8 @@ p.contact-tel b {
 	font-weight: 400;
 }
 
-.feedback-form input:-moz-placeholder,
-.feedback-form textarea:-moz-placeholder {
+.feedback-form input::-moz-placeholder,
+.feedback-form textarea::-moz-placeholder {
 	font-weight: 400;
 }
 /*modal-feedback end*/
@@ -2313,7 +2331,12 @@ h1.catalog-title {
 	padding-left: 16px;
 }
 
+.filter-sorting select::-ms-expand {
+    display: none;
+}
+
 .filter-sorting select {
+	border: none;
 	margin-top: 6px;
 	padding: 9px 5px 8px 14px;
 	width: 193px;
@@ -2464,8 +2487,13 @@ h1.catalog-title {
 	justify-content: space-between;
 
 	margin-top: 5px;
-	margin-bottom: 14px;
-	padding: 9px 15px;
+	margin-bottom: 16px;
+	padding: 6px 18px 2px 0px;
+	
+	list-style: none;
+
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
 }
 
 label.filter-zero {
@@ -2474,6 +2502,7 @@ label.filter-zero {
 }
 
 .fat-content label {
+	display: block;
 	position: relative;
 
 	padding-top: 2px;
@@ -2623,6 +2652,12 @@ label.filter-zero {
 
 	margin-top: 5px;
 	margin-bottom: 0;
+	padding: 8px 18px 6px 0px;
+	
+	list-style: none;
+
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 20px;
 }
 
 label.filter-chokolate {
@@ -2649,24 +2684,15 @@ label.filter-jam {
 	align-self: flex-end;
 	
 	width: 146px;
-	margin-right: 18px;
+	margin-top: 21px;
 	margin-bottom: 1px;
-	padding: 8px 0;
+	padding: 7px 0;
 	
 	border-radius: 50%;
 }
 
 .filter-group {
 	border: none;
-}
-
-.filter-group ul {
-	padding: 8px 18px 8px 0px;
-	
-	list-style: none;
-
-	background-color: rgba(255, 255, 255, 0.3);
-	border-radius: 20px;
 }
 
 .filter button {

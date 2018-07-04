@@ -10,10 +10,6 @@ body {
 	background-color: #849d8f;
 }
 
-.gradient {
-	background: linear-gradient(to bottom, #9db1a5 0%, #879F92 20%);
-}
-
 html {
 	box-sizing: border-box;
 }
@@ -22,6 +18,10 @@ html {
 *::before,
 *::after {
 	box-sizing: inherit;
+}
+
+.gradient {
+	background: linear-gradient(to bottom, #9db1a5 0%, #879F92 20%);
 }
 
 a {
@@ -119,6 +119,10 @@ a {
 	padding: 8px 10px;
 	
 	color: #ffffff;
+}
+
+.site-navigation a.last-nav-link {
+	padding-left: 8px;
 }
 
 .site-navigation a.main-nav-link:hover,
@@ -278,6 +282,10 @@ a {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
+.search-wrapper {
+	position: relative;
+}
+
 .modal-search::after {
 	content: "";
 	
@@ -285,9 +293,6 @@ a {
 	top: 10px;
 	left: 0;
 	z-index: 1;
-	
-	width: 45px;
-	height: 40px;
 } /*вставил невидимую перемычку-блок, чтоб попап не скрывался*/
 
 .modal-search .loup {
@@ -306,11 +311,11 @@ a {
 	background-color: #ffffff;
 }
 
-.modal-search:hover .search-form {
+.search-wrapper:hover .search-form {
 	display: block;
 	
 	position: absolute;
-	top: 37px;
+	top: 39px;
 	left: -305px;
 }
 	
@@ -564,6 +569,7 @@ a.restore {
 	color: #323232;
 	
 	text-align: left;
+	vertical-align: top;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -733,6 +739,7 @@ td.value {
 .basket-wrapper-inner .button:hover {
 	cursor: pointer;
 }
+
 /*modal-basket end*/
 a.basket {
 	position: relative;
@@ -887,7 +894,6 @@ li.slide {
 
 	transition: background-image 0.5s ease, background-color 0.5s ease;
 
-	/* Для демонстрации */
 	min-height: 100vh;
 }
 
@@ -1063,19 +1069,27 @@ li.slide {
 .discounts-raspberry {
 	width: 560px;
 	min-height: 230px;
-	
+	padding-bottom: 35px;
+
+	background-color: #B3607D;
 	background-image: url("../img/raspbery.png");
 	background-position: 0 0;
 	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 13px;
 }
 
 .discounts-chocolate {
 	width: 560px;
 	min-height: 230px;
+	padding-bottom: 35px;
 	
+	background-color: #704D3F;
 	background-image: url("../img/chokolate.png");
 	background-position: 0 0;
 	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 13px;
 }
 
 .discounts-raspberry h3 {
@@ -1522,17 +1536,18 @@ p.catalog-button {
 /*blog start*/
 .blog-and-subscription {
 	width: 100%;
-	min-height: 225px;
+	min-height: 221px;
 	display: flex;
 	justify-content: space-between;
 	
-	margin-bottom: 35px;
+	margin-bottom: 39px;
 }
 
 .blog {
 	margin: 0px;
+	margin-right: 25px;
 	width: 560px;
-	height: 220px;
+	min-height: 220px;
 	border-radius: 15px;
 	
 	background-color: #ffffff;
@@ -1540,6 +1555,7 @@ p.catalog-button {
 	background-position: 0 0;
 	background-size: contain;
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .blog h2 {
@@ -1578,7 +1594,6 @@ p.catalog-button {
 	
 	border-bottom: 2px solid #f9cdc4;
 }
-
 /*blog end*/
 
 /*subscription start*/
@@ -1586,7 +1601,7 @@ p.catalog-button {
 	margin: 0px;
 	padding: 0;
 	width: 560px;
-	height: 220px;
+	min-height: 220px;
 	border-radius: 15px;
 	
 	color: #5a5a5a;
@@ -1795,7 +1810,7 @@ p.contact-tel b {
 	min-height: 95px;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	padding-top: 12px;
 }
 
 .main-footer-inner {
@@ -1862,6 +1877,7 @@ p.contact-tel b {
 
 .footer-social {
 	width: 268px;
+	padding-top: 2px;
 }
 
 .social-button {
@@ -1901,6 +1917,8 @@ p.contact-tel b {
 	width: 520px;
 	margin: 0;
 	padding: 0;
+	padding-top: 3px;
+	padding-right: 2px;
 	
 	font-size: 13px;
 	line-height: 18px;
@@ -1942,7 +1960,7 @@ p.contact-tel b {
 	content: "";
 	
 	position: absolute;
-	top: 16px;
+	top: 19px;
 	left: 84px;
 	
 	width: 15px;
@@ -1954,7 +1972,7 @@ p.contact-tel b {
 
 .footer-copyright {
 	width: 265px;
-	margin-top: -10px;
+	min-height: 72px;
 	margin-right: -2px;
 	padding-left: 75px;
 	
